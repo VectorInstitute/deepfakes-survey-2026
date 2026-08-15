@@ -1,0 +1,320 @@
+/* ==========================================================
+   Deepfake Detection Beyond the Lab — project page
+
+   Built on the Academic Project Page Template (adopted from the
+   Nerfies project page). Palette and type follow that template;
+   the accent is Vector Institute's.
+   ========================================================== */
+
+:root {
+    --primary-color: #667eea;
+    --primary-hover: #5a67d8;
+    --secondary-color: #64748b;
+    --accent-color: #764ba2;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-light: #94a3b8;
+    --background-primary: #ffffff;
+    --background-secondary: #f8fafc;
+    --background-accent: #f1f5f9;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --border-radius: 12px;
+    --border-radius-lg: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: var(--background-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.title,
+.subtitle,
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif !important;
+    color: var(--text-primary);
+}
+
+/* ---------- Hero ---------- */
+
+.publication-title {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 800 !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 1.25rem !important;
+    line-height: 1.1 !important;
+}
+
+.publication-subtitle {
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.publication-authors {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.author-block {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.publication-links {
+    margin-top: 1.5rem;
+}
+
+.link-block {
+    display: inline-block;
+    margin: 0.25rem;
+}
+
+.vector-mark {
+    margin-bottom: 1.75rem;
+}
+
+.vector-mark img {
+    height: 54px;
+    width: auto;
+    display: inline-block;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    border-radius: var(--border-radius) !important;
+    font-weight: 600 !important;
+    transition: var(--transition) !important;
+    border: 2px solid transparent !important;
+}
+
+.button.is-dark {
+    background: var(--text-primary) !important;
+    border: none !important;
+    color: #fff !important;
+    box-shadow: var(--shadow-md);
+}
+
+.button.is-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--primary-color) !important;
+}
+
+.button.is-dark:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+}
+
+.button[disabled],
+.button.is-static-note {
+    background: var(--background-accent) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: none;
+    cursor: default;
+    border: 1px dashed var(--border-color) !important;
+}
+
+.button[disabled]:hover,
+.button.is-static-note:hover {
+    transform: none;
+    background: var(--background-accent) !important;
+}
+
+/* ---------- Sections ---------- */
+
+.is-light {
+    background: var(--background-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section .title.is-3 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.content p {
+    color: var(--text-primary);
+}
+
+/* ---------- Teaser and figures ---------- */
+
+.publication-banner {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    margin: 1.5rem 0;
+}
+
+.publication-banner img,
+.figure-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.figure-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+}
+
+.figure-card .caption,
+.publication-banner + .caption,
+.caption {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.85rem 1rem;
+    margin: 0;
+}
+
+/* ---------- A1–A5 cards ---------- */
+
+.assumption-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.1rem;
+    height: 100%;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.assumption-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.assumption-key {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
+    color: #fff;
+    background: var(--gradient-primary);
+    border-radius: 999px;
+    padding: 2px 11px;
+    margin-bottom: 0.6rem;
+}
+
+.assumption-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.assumption-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ---------- Stats ---------- */
+
+.stat-row {
+    margin-top: 0.5rem;
+}
+
+.stat .stat-value {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.stat .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- BibTeX ---------- */
+
+#BibTeX pre {
+    background: var(--background-accent);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    color: var(--text-primary);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+    background: var(--background-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 3rem 1.5rem;
+}
+
+.footer .content p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.footer a {
+    color: var(--primary-color);
+}
+
+/* ---------- Responsive ---------- */
+
+@media screen and (max-width: 768px) {
+    .publication-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .publication-authors {
+        font-size: 0.95rem !important;
+    }
+
+    .hero-body {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .link-block {
+        display: block;
+    }
+
+    .link-block .button {
+        width: 100%;
+    }
+
+    .stat .stat-value {
+        font-size: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .assumption-card:hover,
+    .button.is-dark:hover {
+        transform: none;
+    }
+}
