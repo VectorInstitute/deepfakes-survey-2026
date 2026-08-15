@@ -129,7 +129,9 @@ Most platform effects on forensic evidence are **asserted rather than measured**
 
 ## 📖 Papers by Category
 
-Entries are ordered newest-first within each subsection. Blockquotes name the forensic assumptions most relevant to that group.
+Every one of the survey's **220 bibliography entries** appears below, organized by the role it plays in the argument. A work cited in more than one role is listed under each. Entries are ordered newest-first within a subsection, and blockquotes name the forensic assumptions most relevant to that group.
+
+> The reviewed **corpus** is 239 works; the **bibliography** carries 220 numbered references, since some corpus items are counted as a series (the ASVspoof releases, for instance) or discussed only inside a table. This list follows the bibliography.
 
 ## 1. Generative Foundations & the Deepfake Pipeline
 
