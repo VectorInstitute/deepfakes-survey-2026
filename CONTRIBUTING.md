@@ -14,7 +14,7 @@ Please also:
 
 1. **Place it in the right section.** Sections mirror the survey's structure (generation taxonomy → detection families → lifecycle → datasets → governance).
 2. **Keep entries in reverse-chronological order** within each subsection.
-3. **State which assumptions it touches** in the PR description, if the work is a detection method or a benchmark. Use the `A1`–`A5` labels defined in [the README](README.md#-the-five-forensic-assumptions):
+3. **State which assumptions it touches** in the PR description, if the work is a detection method or a benchmark. Note that the labels mean different things by context: for a *generation* method, whether the assumption **holds** for its outputs; for a *detector*, whether it **depends on** the assumption or **mitigates** its failure; for a *benchmark*, which assumptions it can **stress-test**. Use the `A1`–`A5` labels defined in [the README](README.md#-the-five-forensic-assumptions):
 
    | | Assumption |
    |---|---|
@@ -29,6 +29,16 @@ Please also:
 ## Adding a dataset
 
 Datasets go in the [Datasets & Benchmarks](README.md#5-datasets--benchmarks) section. Include size, modality (I / A / V / AV), task, and the assumptions the benchmark can stress-test.
+
+## Where the content comes from
+
+The README is generated from the paper's own LaTeX source, not transcribed by hand:
+
+- The **paper list** covers every one of the 216 references cited by the build, grouped using the paper's own table structure (Table 3 for generation families, Table 4 for detection families, Table 6 for benchmarks).
+- The **tables** on the project page reproduce Tables 1, 2, 5, and 6 cell-for-cell.
+- The **figures** in `docs/images/` are rendered from the figure sources in `figures/`, not cropped from the compiled PDF.
+
+If you change a table or figure in the paper, regenerate the corresponding part here rather than editing the rendered output.
 
 ## Reporting problems
 

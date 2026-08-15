@@ -389,6 +389,42 @@ figcaption strong {
     margin-top: var(--space-xl);
 }
 
+/* Figure grid (the four corpus charts) */
+.fig-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.fig-grid figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.fig-grid img {
+    background: white;
+    padding: var(--space-xs);
+}
+
+.fig-grid figcaption {
+    margin-top: auto;
+    font-size: 0.9rem;
+    padding: var(--space-sm);
+}
+
+.inline-fig {
+    margin: var(--space-sm) 0 0;
+    box-shadow: none;
+    border: 1px solid var(--border);
+}
+
+.inline-fig figcaption {
+    font-size: 0.85rem;
+    padding: var(--space-sm);
+}
+
 /* Two column */
 .two-col {
     display: grid;
@@ -807,12 +843,69 @@ tr.row-highlight td {
 }
 
 .finding h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
 }
 
 .finding p {
     margin-bottom: 0;
+}
+
+.finding code {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1px 6px;
+    font-size: 0.8em;
+    color: var(--accent-deep);
+}
+
+/* F1..F6 / Q1..Q5 keys */
+.fkey {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    flex: none;
+}
+
+.qkey {
+    background: linear-gradient(135deg, #0f766e, #0891b2);
+}
+
+/* Survey-structure outline table */
+.structure th[scope="row"] {
+    min-width: 15rem;
+    font-family: var(--font-heading);
+    line-height: 1.35;
+}
+
+.structure td {
+    line-height: 1.9;
+}
+
+.structure .ann {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--accent-deep);
+    background: #eef1fe;
+    border-radius: 999px;
+    padding: 1px 8px;
+    margin-left: 6px;
+    white-space: nowrap;
 }
 
 /* BibTeX */
@@ -975,6 +1068,10 @@ footer p {
 
     .grid-3 {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fig-grid {
+        grid-template-columns: 1fr;
     }
 }
 

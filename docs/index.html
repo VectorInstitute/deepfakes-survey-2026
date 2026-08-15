@@ -12,7 +12,7 @@
     <meta property="og:title" content="Deepfake Detection Beyond the Lab: A Survey of Real-World Distribution, Forensics, and Provenance">
     <meta property="og:description" content="239 works across the deepfake lifecycle, organized around five forensic assumptions that detectors implicitly rely on.">
     <meta property="og:url" content="https://vectorinstitute.github.io/deepfakes-survey-2026/">
-    <meta property="og:image" content="https://vectorinstitute.github.io/deepfakes-survey-2026/images/figure5.png">
+    <meta property="og:image" content="https://vectorinstitute.github.io/deepfakes-survey-2026/images/figure5-lifecycle.png">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="styles.css">
@@ -39,6 +39,7 @@
                 <li><a href="#taxonomy">Taxonomy</a></li>
                 <li><a href="#lifecycle">Lifecycle</a></li>
                 <li><a href="#findings">Findings</a></li>
+                <li><a href="#questions">Questions</a></li>
                 <li><a href="#citation">Citation</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
@@ -77,7 +78,8 @@
             </div>
 
             <ul class="hero-stats">
-                <li><strong>239</strong><span>works reviewed</span></li>
+                <li><strong>239</strong><span>works in corpus</span></li>
+                <li><strong>216</strong><span>references cited</span></li>
                 <li><strong>1,247</strong><span>records screened</span></li>
                 <li><strong>5</strong><span>forensic assumptions</span></li>
                 <li><strong>2017&ndash;2026</strong><span>search window</span></li>
@@ -106,7 +108,7 @@
         </div>
     </section>
 
-    <!-- The Evidence Gap -->
+    <!-- Evidence gap -->
     <section class="section bg-light">
         <div class="container">
             <h2 class="section-title">The Evidence Gap</h2>
@@ -115,47 +117,80 @@
                     Roughly <strong>5.24 billion</strong> social media identities were active at the start of 2025. A deepfake is not simply a video to classify: it passes through upload, transcoding, recommendation, reposting, review, and eventual removal or continued spread. Every one of those steps rewrites the forensic record.
                 </p>
                 <p>
-                    Our corpus makes the imbalance explicit. Creation and detection account for <strong>75%</strong> of the 239 reviewed works, while distribution, provenance, and remediation together account for <strong>12%</strong> — the stages that determine what evidence survives to a detector are the stages the field has studied least. Cumulative generation research overtook detection research by 24 works in 2024.
+                    The corpus makes the imbalance explicit. Creation and detection account for <strong>75%</strong> of the 239 reviewed works, while distribution, provenance, and remediation together account for <strong>12%</strong> &mdash; the stages that determine what evidence survives to a detector are among the least studied. Cumulative generation research overtook detection research by 24 works in 2024.
                 </p>
+            </div>
+
+            <div class="fig-grid">
                 <figure>
-                    <img src="images/figure3.png" alt="Four charts summarizing the reviewed corpus: lifecycle-stage coverage, publication sources, publications per year, and cumulative generation versus detection effort" loading="lazy">
-                    <figcaption><strong>Figure 3:</strong> Overview of the reviewed literature corpus. (a) Creation and detection account for three quarters of the corpus, against 12% for distribution, provenance, and remediation combined. (b) Publication sources by venue type; 72% peer-reviewed. (c) Publications per year by primary role; the 2026 bar is partial (January to August). (d) Cumulative effort: detection led through 2023, but generation led by 24 works in 2024.</figcaption>
+                    <img src="images/figure3a-stage-coverage.png" alt="Horizontal bar chart of lifecycle-stage coverage: creation 94, detection 85, foundations 32, provenance 16, remediation 8, distribution 4" loading="lazy">
+                    <figcaption><strong>Figure 3(a):</strong> Coverage across deepfake lifecycle stages.</figcaption>
                 </figure>
+                <figure>
+                    <img src="images/figure3b-venues.png" alt="Horizontal bar chart of publication sources grouped by venue type" loading="lazy">
+                    <figcaption><strong>Figure 3(b):</strong> Publication sources, grouped by venue type; 72% peer-reviewed.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/figure3c-year-role.png" alt="Stacked bar chart of publications per year by primary generation or detection role" loading="lazy">
+                    <figcaption><strong>Figure 3(c):</strong> Publications per year by primary role; the 2026 bar is partial (January to August).</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/figure3d-arms-race.png" alt="Line chart of cumulative generation versus detection effort, ending at 97 and 87" loading="lazy">
+                    <figcaption><strong>Figure 3(d):</strong> Cumulative effort: detection led through 2023, but generation led by 24 works in 2024.</figcaption>
+                </figure>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data">
+                    <caption><strong>Lifecycle-stage coverage</strong> across the corpus (N = 239).</caption>
+                    <thead>
+                        <tr><th scope="col">Stage</th><th scope="col">Works</th><th scope="col">Share</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Creation</th><td class="c">94</td><td class="c">39%</td></tr>
+                        <tr><th scope="row">Detection</th><td class="c">85</td><td class="c">36%</td></tr>
+                        <tr><th scope="row">Foundations / other</th><td class="c">32</td><td class="c">13%</td></tr>
+                        <tr><th scope="row">Provenance</th><td class="c">16</td><td class="c">7%</td></tr>
+                        <tr><th scope="row">Remediation</th><td class="c">8</td><td class="c">3%</td></tr>
+                        <tr><th scope="row">Distribution</th><td class="c">4</td><td class="c">2%</td></tr>
+                        <tr class="row-highlight"><th scope="row">Distribution + provenance + remediation</th><td class="c">28</td><td class="c">12%</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- Literature positioning -->
+    <!-- Positioning -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Positioning</h2>
             <div class="two-col">
                 <div>
-                    <p>Prior surveys concentrate on generation and detection taxonomies, reliability, proactive defense, or model architectures. Few connect forensic detection with the <em>platform conditions</em> under which synthetic media is processed, propagated, verified, and remediated.</p>
-                    <p><strong>This survey joins those strands</strong>, combining generative foundations and forensic detection with a social-media lifecycle perspective, and adds agentic detection — largely absent elsewhere.</p>
+                    <p>Prior surveys concentrate on generation and detection taxonomies, reliability, proactive defense, modality-specific analysis, or model architectures. Few connect deepfake generation and forensic detection with the <em>platform conditions</em> under which synthetic media is processed, propagated, verified, and remediated.</p>
+                    <p><strong>Agentic detection remains largely absent.</strong> This survey addresses the gap by combining generative foundations and forensic detection with a social-media lifecycle perspective.</p>
                 </div>
                 <figure>
-                    <img src="images/figure2.png" alt="PRISMA-style flow diagram: 1,247 records identified, 1,044 screened, 430 assessed for eligibility, 239 included" loading="lazy">
-                    <figcaption><strong>Figure 2:</strong> Literature screening and selection process. 1,247 records were identified; 239 works were included.</figcaption>
+                    <img src="images/figure2-prisma.png" alt="PRISMA-style flow diagram: 1,247 records identified, 1,044 screened, 430 assessed for eligibility, 239 included" loading="lazy">
+                    <figcaption><strong>Figure 2:</strong> Literature screening and selection process.</figcaption>
                 </figure>
             </div>
 
             <div class="table-wrap">
                 <table class="matrix">
-                    <caption><strong>Table 1:</strong> Comparison with representative prior surveys. <span class="sym sym-full">&#9679;</span> substantial &nbsp; <span class="sym sym-half">&#9679;</span> partial &nbsp; <span class="sym sym-none">&#9675;</span> none.</caption>
+                    <caption><strong>Table 1:</strong> Comparison with prior surveys across major deepfake research dimensions. Coverage reflects the primary emphasis of each survey. <span class="sym sym-full">&#9679;</span> substantial &nbsp; <span class="sym sym-half">&#9679;</span> partial &nbsp; <span class="sym sym-none">&#9675;</span> none.</caption>
                     <thead>
                         <tr>
                             <th scope="col">Survey</th>
                             <th scope="col">Year</th>
                             <th scope="col" title="Generation">Gen.</th>
                             <th scope="col" title="Detection">Det.</th>
-                            <th scope="col" title="Watermarking, C2PA, provenance">Prov.</th>
-                            <th scope="col" title="Benchmarks, metrics, reproducibility">Eval.</th>
+                            <th scope="col" title="Watermarking, C2PA, and provenance">Prov.</th>
+                            <th scope="col" title="Benchmarks, metrics, and reproducibility">Eval.</th>
                             <th scope="col" title="Video foundation models">FM</th>
                             <th scope="col" title="Forensic-assumption framework">A1&ndash;A5</th>
                             <th scope="col" title="LLM/VLM or multi-agent detection">Agentic</th>
                             <th scope="col" title="Audiovisual and temporal analysis">A&#8209;V</th>
-                            <th scope="col" title="Creation, distribution, detection, provenance, remediation">Lifecycle</th>
+                            <th scope="col" title="Creation, distribution, detection, provenance, and remediation">Lifecycle</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -176,12 +211,12 @@
         </div>
     </section>
 
-    <!-- Five Assumptions -->
+    <!-- Five assumptions -->
     <section id="assumptions" class="section bg-dark">
         <div class="container-wide">
             <h2 class="section-title">Five Forensic Assumptions</h2>
             <div class="content">
-                <p>Detectors rely on assumptions about the evidence available to them. We group these expectations into five assumptions, <strong>A1&ndash;A5</strong>, which form the analytical spine of the survey. Each section of the paper states which assumptions the methods it reviews depend on, and which ones fail.</p>
+                <p>Deepfake detectors rely on assumptions about the evidence available, such as the presence of an editing boundary, a recurring generator fingerprint, or similarity between training and test data. We group these expectations into five assumptions, <strong>A1&ndash;A5</strong>, which form the analytical spine of the survey.</p>
             </div>
 
             <div class="grid-5">
@@ -191,11 +226,11 @@
                     <p><em>A manipulated region leaves a boundary.</em></p>
                     <ul>
                         <li>Compositing seams</li>
-                        <li>Texture &amp; colour mismatch</li>
-                        <li>Resolution discontinuity</li>
-                        <li>Local compression shift</li>
+                        <li>Texture differences</li>
+                        <li>Resolution mismatch</li>
+                        <li>Colour &amp; compression shift</li>
                     </ul>
-                    <p class="card-fail"><strong>Fails when</strong> video is fully synthetic — every pixel is generated, so there is nothing to composite against.</p>
+                    <p class="card-fail"><strong>Fails when</strong> video is fully synthetic &mdash; every pixel is generated, so there is nothing to composite against.</p>
                 </div>
 
                 <div class="card">
@@ -204,11 +239,11 @@
                     <p><em>A generator leaves a stable fingerprint.</em></p>
                     <ul>
                         <li>Upsampling traces</li>
-                        <li>Spectral signatures</li>
-                        <li>VAE-decoder bias</li>
-                        <li>Vocoder residuals</li>
+                        <li>Frequency-domain signatures</li>
+                        <li>Decoder residuals</li>
+                        <li>Supports attribution</li>
                     </ul>
-                    <p class="card-fail"><strong>Fails when</strong> generators are chained, fine-tuned, quantized, or distilled — no single fingerprint survives the chain.</p>
+                    <p class="card-fail"><strong>Fails when</strong> patterns change across models, versions, fine-tuning methods, and post-processing &mdash; or when generators are chained.</p>
                 </div>
 
                 <div class="card">
@@ -216,12 +251,12 @@
                     <h3>Distribution Alignment</h3>
                     <p><em>Test videos resemble the training data.</em></p>
                     <ul>
-                        <li>Cross-generator shift</li>
-                        <li>Cross-manipulation shift</li>
-                        <li>Cross-quality shift</li>
-                        <li>Cross-domain shift</li>
+                        <li>Known generators</li>
+                        <li>Known manipulation types</li>
+                        <li>Familiar identities &amp; scenes</li>
+                        <li>Familiar recording conditions</li>
                     </ul>
-                    <p class="card-fail"><strong>Fails when</strong> new generators, identities, languages, or platforms appear after training — which is the default in deployment.</p>
+                    <p class="card-fail"><strong>Fails when</strong> deployment brings new generators, manipulation methods, identities, scenes, or recording conditions &mdash; which is the default.</p>
                 </div>
 
                 <div class="card">
@@ -229,12 +264,12 @@
                     <h3>Signal Survival</h3>
                     <p><em>Forensic signals survive processing.</em></p>
                     <ul>
-                        <li>Transcoding</li>
-                        <li>Resizing &amp; cropping</li>
-                        <li>Re-encoding chains</li>
-                        <li>Screen recording</li>
+                        <li>Resizing</li>
+                        <li>Filtering</li>
+                        <li>Compression</li>
+                        <li>Repeated re-encoding</li>
                     </ul>
-                    <p class="card-fail"><strong>Fails when</strong> media passes through platform pipelines: the smallest edited regions degrade earliest.</p>
+                    <p class="card-fail"><strong>Fails when</strong> media passes through platform pipelines, which weaken useful traces and introduce unrelated platform artifacts.</p>
                 </div>
 
                 <div class="card">
@@ -247,12 +282,12 @@
                         <li>Frame-level motion</li>
                         <li>Cross-modal mismatch</li>
                     </ul>
-                    <p class="card-fail"><strong>Fails when</strong> audio and video are generated jointly — the two channels agree by construction, so mismatch is no longer evidence.</p>
+                    <p class="card-fail"><strong>Fails when</strong> realistic generation demands semantic and multimodal reasoning &mdash; jointly generated audio and video agree by construction.</p>
                 </div>
             </div>
 
             <div class="content callout">
-                <p><strong>Reading the A1&ndash;A5 labels.</strong> They mean different things in different tables. For <em>generation</em>, they report whether an assumption holds for a method's outputs. For <em>detection</em>, whether a method depends on an assumption or mitigates its failure. For <em>datasets</em>, which assumptions a benchmark can stress-test.</p>
+                <p><strong>Reading the A1&ndash;A5 labels.</strong> They mean different things in different tables. In the <em>generation</em> table they report whether an assumption <em>holds</em> for a method's outputs. In the <em>detection</em> table they indicate whether a method <em>depends on</em> an assumption or <em>mitigates</em> its failure. In the <em>dataset</em> table they identify the assumptions a benchmark can <em>stress-test</em>.</p>
             </div>
         </div>
     </section>
@@ -262,12 +297,74 @@
         <div class="container">
             <h2 class="section-title">Survey Structure</h2>
             <div class="content">
-                <p>Each leaf below lists representative works and, where applicable, the forensic assumptions most relevant to that subsection.</p>
+                <p>Each subsection below carries the forensic assumptions most relevant to it.</p>
             </div>
-            <figure class="full-width">
-                <img src="images/figure1.png" alt="Tree diagram of the survey structure across background and forensic foundations, the generation taxonomy, detection, the social media lifecycle, datasets and evaluation, discussion, and conclusion" loading="lazy">
-                <figcaption><strong>Figure 1:</strong> Structure of this survey. Each leaf lists representative works and the forensic assumptions most relevant to that subsection.</figcaption>
-            </figure>
+            <div class="table-wrap">
+                <table class="data structure">
+                    <caption><strong>Figure 1 (as an outline):</strong> the structure of the survey.</caption>
+                    <thead>
+                        <tr><th scope="col">Section</th><th scope="col">Contents</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">&sect;2 &nbsp;Background &amp; Forensic Foundations</th>
+                            <td>
+                                <strong>2.1 Deepfake video pipeline</strong> &mdash; acquisition &rarr; preprocessing &rarr; generation &rarr; post-processing &rarr; dissemination; every stage adds, alters, or suppresses forensic traces<br>
+                                <strong>2.2 Generative modelling foundations</strong> &mdash; AE/VAE; GAN; diffusion; autoregressive; 3D-aware<br>
+                                <strong>2.3 Forensic signals &amp; assumptions A1&ndash;A5</strong> &mdash; boundary artifacts, stable fingerprints, distribution alignment, signal fidelity, semantic independence
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&sect;3 &nbsp;Taxonomy of Generative Deepfakes</th>
+                            <td>
+                                <strong>3.1 Identity-centric</strong> <span class="ann">A1 holds &rarr; fails</span><br>
+                                <strong>3.2 Body-centric</strong> <span class="ann">A1 scales with extent</span><br>
+                                <strong>3.3 Audio-centric</strong> <span class="ann">A2 load-bearing, A5 breaks</span><br>
+                                <strong>3.4 Scene-centric</strong> <span class="ann">A1 and A3 fail</span><br>
+                                <strong>3.5 Hybrid &amp; multimodal</strong> <span class="ann">A5 and A2 fail</span><br>
+                                <strong>3.6 Cross-cutting temporal &amp; partial</strong> &mdash; the manipulated interval is the unit
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&sect;4 &nbsp;Detection, Localization &amp; Attribution</th>
+                            <td>
+                                <strong>4.1 Problem formulation</strong> &mdash; binary, fine-grained, localization, attribution, calibration<br>
+                                <strong>4.2 Signal-driven forensics</strong> <span class="ann">A1, A2, A4, A5</span><br>
+                                <strong>4.3 Learning-based architectures</strong> <span class="ann">A3 dominant</span><br>
+                                <strong>4.4 Generalization &amp; adaptation</strong> <span class="ann">A3 cannot be removed</span><br>
+                                <strong>4.5 Reasoning-based &amp; agentic detection</strong> <span class="ann">substitutes for A5</span><br>
+                                <strong>4.6 Adversarial robustness &amp; evasion</strong> <span class="ann">A2 and A3 are attackable</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&sect;5 &nbsp;Social Media Lifecycle</th>
+                            <td>
+                                <strong>5.1 Platform upload &amp; forensic transformation</strong> <span class="ann">A1, A2, A4</span><br>
+                                <strong>5.2 Algorithmic propagation &amp; cross-platform reposting</strong> <span class="ann">A3, A5</span><br>
+                                <strong>5.3 Provenance &amp; content authenticity</strong> <span class="ann">A4, and A2 for keyed recovery</span><br>
+                                <strong>5.4 Platform governance &amp; remediation</strong> <span class="ann">inherits upstream failures</span><br>
+                                <strong>5.5 Failure points &amp; interventions</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&sect;6 &nbsp;Datasets &amp; Evaluation</th>
+                            <td><strong>6.1 Benchmark evolution</strong> &middot; <strong>6.2 Evaluation tasks &amp; metrics</strong> &middot; <strong>6.3 Recommended protocol &amp; assumption reporting</strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&sect;7 &nbsp;Findings</th>
+                            <td>Assumption-level synthesis, <strong>F1&ndash;F6</strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&sect;8 &nbsp;Discussion</th>
+                            <td><strong>8.1 Impact of this study</strong> &middot; <strong>8.2 Open questions Q1&ndash;Q5</strong> &middot; <strong>8.3 Limitations</strong></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">&sect;9 &nbsp;Conclusion</th>
+                            <td>Post-artifact synthesis</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -277,11 +374,11 @@
             <h2 class="section-title">The Deepfake Attack Pipeline</h2>
             <div class="content">
                 <p>
-                    We formalize deepfake video creation as a five-stage pipeline. Every stage adds, alters, or suppresses forensic traces. The data cost of a convincing target has collapsed: from a corpus of identity-specific frames, to a single reference image with training-free identity injection, to <em>none at all</em> for untargeted text-to-video generation.
+                    The survey formalizes deepfake video creation as a five-stage pipeline. Every stage adds, alters, or suppresses forensic traces. The data cost of a convincing target has collapsed: from a corpus of identity-specific frames, to a single reference image with training-free identity conditioning, to <em>none at all</em> for untargeted text-to-video generation.
                 </p>
                 <figure>
-                    <img src="images/figure4.png" alt="Five-stage deepfake pipeline: data acquisition, preprocessing, generation, post-processing, and dissemination, with annotations for how forensic traces change at each stage" loading="lazy">
-                    <figcaption><strong>Figure 4:</strong> Deepfake video pipeline spanning data acquisition, preprocessing, generation, post-processing, and dissemination. Traditional identity-specific and audio-driven workflows are contrasted with foundation-model generation, while annotations indicate how forensic traces are introduced, modified, suppressed, or degraded across stages.</figcaption>
+                    <img src="images/figure4-pipeline.png" alt="Five-stage deepfake pipeline: data acquisition, preprocessing, generation, post-processing, and dissemination, with annotations for how forensic traces change at each stage" loading="lazy">
+                    <figcaption><strong>Figure 4:</strong> Deepfake video pipeline spanning data acquisition, preprocessing, generation, post-processing, and dissemination. Traditional identity-specific and audio-driven workflows are contrasted with foundation-model generation, while the annotations indicate how forensic traces are introduced, modified, suppressed, or degraded across stages.</figcaption>
                 </figure>
             </div>
         </div>
@@ -292,7 +389,7 @@
         <div class="container">
             <h2 class="section-title">Generation Taxonomy</h2>
             <div class="content">
-                <p>We organize the generation literature by <strong>manipulation target</strong>, because the target determines what forensic evidence remains available to a detector. The assumptions fail in order: A1 goes with the seam, A2 outlives it but fails wherever generators are chained, and A5 is what jointly generated audio and video remove.</p>
+                <p>The survey organizes the generation literature by <strong>manipulation target</strong>, because the target determines what forensic evidence remains available to a detector. Across the taxonomy, <code>A1</code> weakens as manipulation expands from localized edits to full-frame generation; <code>A2</code> remains relevant but is challenged by chained generators; and <code>A5</code> is weakened when audio and video are generated jointly.</p>
             </div>
 
             <div class="table-wrap">
@@ -308,60 +405,64 @@
                     <tbody>
                         <tr>
                             <th scope="row">Identity-Centric</th>
-                            <td>Swap: DeepFaceLab, SimSwap, REFace · Reenact: Face2Face, FOMM · Talking-head: EMO, VASA-1 · Lip-sync: Wav2Lip, MuseTalk</td>
+                            <td>Swap: DeepFaceLab, SimSwap, REFace &middot; Reenact: Face2Face, FOMM &middot; Talking-head: EMO, VASA-1 &middot; Lip-sync: Wav2Lip, MuseTalk</td>
                             <td><span class="tag tag-warn">A1 holds &rarr; fails</span> as generation moves from a pasted region to a fully synthesized portrait</td>
                         </tr>
                         <tr>
                             <th scope="row">Body-Centric</th>
                             <td>Everybody Dance Now, MagicAnimate, Animate Anyone, DisCo, Champ, UniAnimate</td>
-                            <td><span class="tag tag-warn">A1 scales with extent</span> — a local seam weakens as the edit expands to full-frame synthesis</td>
+                            <td><span class="tag tag-warn">A1 scales with extent</span> &mdash; a local seam weakens as the edit expands to full-frame synthesis</td>
                         </tr>
                         <tr>
                             <th scope="row">Audio-Centric</th>
-                            <td>TTS &amp; cloning: VALL-E, YourTTS, NaturalSpeech 2, VoiceBox · Conversion &amp; editing: AutoVC, FreeVC, SpeechX</td>
-                            <td><span class="tag tag-bad">A2 load-bearing, A5 breaks</span> — audio has no spatial boundary, and partial edits defeat visual-only detectors</td>
+                            <td>TTS &amp; cloning: VALL-E, YourTTS, NaturalSpeech 2, VoiceBox &middot; Conversion &amp; editing: AutoVC, FreeVC, SpeechX</td>
+                            <td><span class="tag tag-bad">A2 load-bearing, A5 breaks</span> &mdash; audio has no spatial boundary, and partial edits defeat visual-only detectors</td>
                         </tr>
                         <tr>
                             <th scope="row">Scene-Centric</th>
-                            <td>T2V: Open-Sora, Veo, CogVideoX, Wan 2.1 · I2V: SVD, AnimateDiff · V2V: ProPainter</td>
-                            <td><span class="tag tag-bad">A1 and A3 fail</span> — no authentic-synthetic boundary exists, and unseen generators fall outside training</td>
+                            <td>T2V: Open Sora, Veo, CogVideoX, Wan 2.1 &middot; I2V: SVD, AnimateDiff &middot; V2V: ProPainter</td>
+                            <td><span class="tag tag-bad">A1 and A3 fail</span> &mdash; no authentic&ndash;synthetic boundary exists, and unseen generators fall outside training</td>
                         </tr>
                         <tr>
                             <th scope="row">Hybrid &amp; Multimodal</th>
                             <td>Identity injection (InstantID, IP-Adapter) chained with lip-sync and voice cloning</td>
-                            <td><span class="tag tag-bad">A5 and A2 fail</span> — no single generator fingerprint survives the chain</td>
+                            <td><span class="tag tag-bad">A5 and A2 fail</span> &mdash; no single generator fingerprint survives the chain</td>
                         </tr>
                         <tr>
                             <th scope="row">Temporal &amp; Partial</th>
                             <td>LAV-DF, AV-Deepfake1M</td>
-                            <td><span class="tag tag-neutral">Video-level labels are insufficient</span> — the manipulated interval is the unit</td>
+                            <td><span class="tag tag-neutral">Video-level labels are insufficient</span> &mdash; the manipulated interval is the unit</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="table-wrap">
-                <table class="data">
-                    <caption><strong>Table 2 (condensed):</strong> Generative paradigms and the forensic evidence left behind. Evidence runs from <em>High</em> (multiple independent traces) to <em>Low</em> (few or none).</caption>
+                <table class="data matrix">
+                    <caption><strong>Table 2:</strong> Generative paradigms and the forensic evidence they leave. <span class="sym sym-full">&#9679;</span> the assumption generally holds &nbsp; <span class="sym sym-half">&#9680;</span> partially holds &nbsp; <span class="sym sym-none">&#9675;</span> generally does not. Fewer filled circles indicate a harder detection problem, not a more capable generator.</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Paradigm</th>
+                            <th scope="col">Generative paradigm</th>
                             <th scope="col">Scope</th>
-                            <th scope="col">Characteristic forensic traces</th>
-                            <th scope="col">Evidence</th>
+                            <th scope="col">A1</th>
+                            <th scope="col">A2</th>
+                            <th scope="col">A3</th>
+                            <th scope="col">A4</th>
+                            <th scope="col">A5</th>
+                            <th scope="col" title="Usable forensic evidence remaining for a detector">Evid.</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><th scope="row">Autoencoder/VAE face swapping</th><td>Localized face</td><td>Blending boundaries; reconstruction blur; local texture/resolution mismatch</td><td class="c"><span class="ev ev-high">High</span></td></tr>
-                        <tr><th scope="row">GAN face swapping</th><td>Localized face</td><td>Upsampling/frequency fingerprints; blending artifacts; colour mismatch</td><td class="c"><span class="ev ev-high">High</span></td></tr>
-                        <tr><th scope="row">GAN reenactment &amp; video synthesis</th><td>Localized or full frame</td><td>Upsampling fingerprints; motion-field and keypoint artifacts; temporal inconsistency</td><td class="c"><span class="ev ev-mod">Moderate</span></td></tr>
-                        <tr><th scope="row">Diffusion editing &amp; inpainting</th><td>Localized to broad</td><td>Localized edit boundaries; regional compression mismatch; temporal propagation artifacts</td><td class="c"><span class="ev ev-mod">Moderate</span></td></tr>
-                        <tr><th scope="row">NeRF talking-head synthesis</th><td>Head or portrait</td><td>Rendering floaters; view-dependent inconsistency; temporal flicker</td><td class="c"><span class="ev ev-mod">Moderate</span></td></tr>
-                        <tr><th scope="row">3DGS talking-head synthesis</th><td>Head or portrait</td><td>Splat/rendering-edge artifacts; popping; view-dependent inconsistency</td><td class="c"><span class="ev ev-mod">Moderate</span></td></tr>
-                        <tr><th scope="row">Diffusion video generation</th><td>Fully synthetic video</td><td>VAE-decoder biases; denoising/flow residuals; temporal inconsistency</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
-                        <tr><th scope="row">Hybrid diffusion talking-head</th><td>Head or portrait</td><td>Denoising/decoder residuals; motion-prior regularities; audio-visual inconsistency</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
-                        <tr><th scope="row">Autoregressive &amp; hybrid video</th><td>Fully synthetic video</td><td>Tokenization artifacts; temporal drift; cross-frame inconsistency</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
-                        <tr><th scope="row">Flow-based generation</th><td>Image/full-frame</td><td>Flow/decoder residuals; model-dependent spectral traces</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
+                        <tr><th scope="row">Autoencoder/VAE-based face swapping</th><td>Localized face</td><td class="c full">&#9679;</td><td class="c full">&#9679;</td><td class="c full">&#9679;</td><td class="c half">&#9680;</td><td class="c full">&#9679;</td><td class="c"><span class="ev ev-high">High</span></td></tr>
+                        <tr><th scope="row">GAN-based face swapping</th><td>Localized face</td><td class="c full">&#9679;</td><td class="c full">&#9679;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c full">&#9679;</td><td class="c"><span class="ev ev-high">High</span></td></tr>
+                        <tr><th scope="row">GAN-based reenactment and video synthesis</th><td>Localized or full frame</td><td class="c half">&#9680;</td><td class="c full">&#9679;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c"><span class="ev ev-mod">Mod.</span></td></tr>
+                        <tr><th scope="row">Diffusion-based editing and inpainting</th><td>Localized to broad region</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c none">&#9675;</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c"><span class="ev ev-mod">Mod.</span></td></tr>
+                        <tr><th scope="row">NeRF-based talking-head synthesis</th><td>Head or portrait</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c"><span class="ev ev-mod">Mod.</span></td></tr>
+                        <tr><th scope="row">3DGS-based talking-head synthesis</th><td>Head or portrait</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c"><span class="ev ev-mod">Mod.</span></td></tr>
+                        <tr><th scope="row">Diffusion-based video generation</th><td>Fully synthetic video</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c none">&#9675;</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
+                        <tr><th scope="row">Hybrid diffusion talking-head synthesis</th><td>Head or portrait</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c half">&#9680;</td><td class="c none">&#9675;</td><td class="c none">&#9675;</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
+                        <tr><th scope="row">Autoregressive and hybrid video generation</th><td>Fully synthetic video</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c none">&#9675;</td><td class="c none">&#9675;</td><td class="c none">&#9675;</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
+                        <tr><th scope="row">Flow-based generation</th><td>Image/full-frame synthesis</td><td class="c none">&#9675;</td><td class="c half">&#9680;</td><td class="c none">&#9675;</td><td class="c none">&#9675;</td><td class="c none">&#9675;</td><td class="c"><span class="ev ev-low">Low</span></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -373,7 +474,7 @@
         <div class="container">
             <h2 class="section-title">Detection Families</h2>
             <div class="content">
-                <p>We review detection through the same forensic lens. Each family buys a different kind of evidence, and each inherits a different failure mode.</p>
+                <p>The survey reviews detection through the same forensic lens. Each family buys a different kind of evidence, and each inherits a different failure mode. Table 4 of the paper catalogues <strong>50 representative detectors</strong> against A1&ndash;A5.</p>
             </div>
             <div class="grid-3">
                 <div class="card-simple">
@@ -385,13 +486,13 @@
                 <div class="card-simple">
                     <div class="number">2</div>
                     <h3>Learning-Based Architectures</h3>
-                    <p>CNN (SBI, LAA-Net), transformer (TALL, AltFreezing), foundation-adapted (UnivFD, Forensics Adapter, FSFM), fully synthetic (UNITE, DeMamba).</p>
+                    <p>CNN (SBI, LAA-Net), transformer (TALL, AltFreezing), foundation-adapted (UnivFD, Forensics Adapter, FSFM, MARLIN), fully synthetic (UNITE, DeMamba).</p>
                     <p class="dep">A3 dominant</p>
                 </div>
                 <div class="card-simple">
                     <div class="number">3</div>
                     <h3>Generalization &amp; Adaptation</h3>
-                    <p>Data-, model-, and learning-level strategies. Deepfake-Eval-2024 measures roughly <strong>50% AUC loss</strong> for open-source video detectors on in-the-wild media.</p>
+                    <p>Data-, model-, and learning-level strategies. Deepfake-Eval-2024 collects ~44 h of video from 88 web sources and measures an average <strong>50% AUC reduction</strong>.</p>
                     <p class="dep">A3 cannot be removed</p>
                 </div>
                 <div class="card-simple">
@@ -403,13 +504,13 @@
                 <div class="card-simple">
                     <div class="number">5</div>
                     <h3>Adversarial Robustness</h3>
-                    <p>Learned anti-forensics that strips fingerprints; prompt injection against reasoning detectors; evaluation after platform-representative processing.</p>
+                    <p>Learned anti-forensics that suppress fingerprints; prompt injection against reasoning detectors; evaluation after platform-representative processing.</p>
                     <p class="dep">A2 and A3 are attackable</p>
                 </div>
                 <div class="card-simple">
                     <div class="number">6</div>
                     <h3>Operating Points</h3>
-                    <p>At 0.1% prevalence, a detector with 90% TPR and 1% FPR reaches only <strong>~8.3% precision</strong>. Calibration and abstention matter more than AUC.</p>
+                    <p>At 0.1% prevalence, a detector with TPR&nbsp;=&nbsp;0.90 and FPR&nbsp;=&nbsp;0.01 reaches only <strong>~8.3% precision</strong>. Scores should be calibrated so confidence reflects observed correctness.</p>
                     <p class="dep">Prevalence governs deployed precision</p>
                 </div>
             </div>
@@ -425,14 +526,14 @@
                     The lifecycle perspective shifts deepfake analysis from a <em>static-file</em> problem to an <em>evolving-evidence</em> problem: the central question is not only whether content is fake, but what evidence remains when a decision must be made.
                 </p>
                 <figure>
-                    <img src="images/figure5.png" alt="Six-stage lifecycle from creation through platform upload, distribution, detection and review, provenance, and remediation, with the forensic assumptions at risk and intervention opportunities at each stage" loading="lazy">
+                    <img src="images/figure5-lifecycle.png" alt="Six-stage lifecycle from creation through platform upload, distribution, detection and review, provenance, and remediation, with the forensic assumptions at risk and intervention opportunities at each stage" loading="lazy">
                     <figcaption><strong>Figure 5:</strong> Deepfake lifecycle, forensic failure points, and intervention opportunities. Generation, platform processing, and distribution may alter or remove forensic evidence before detection, while provenance, contextual evidence, and human review provide complementary signals for downstream remediation.</figcaption>
                 </figure>
             </div>
 
             <div class="table-wrap">
                 <table class="data">
-                    <caption><strong>Table 5:</strong> Platform transformations, the assumptions they affect, and whether the effect has been <em>measured</em>. The empty measurement cells are themselves a finding.</caption>
+                    <caption><strong>Table 5:</strong> Platform transformations, affected forensic assumptions, and measurement status in the reviewed corpus. &ldquo;Described&rdquo; denotes effects reported without a quantitative magnitude. Metadata stripping is marked <em>n/a</em> because it removes external records rather than media-internal evidence.</caption>
                     <thead>
                         <tr>
                             <th scope="col">Transformation</th>
@@ -443,14 +544,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><th scope="row">Transcoding &amp; re-encoding</th><td>Upload</td><td class="c"><code>A2, A4</code></td><td>Suppresses generation traces and introduces codec artifacts the detector must separate from them</td><td class="c"><span class="ev ev-high">Measured</span></td></tr>
-                        <tr><th scope="row">Resolution reduction &amp; resizing</th><td>Upload</td><td class="c"><code>A1, A4</code></td><td>Weakens localized blending boundaries first; smallest edited regions degrade earliest</td><td class="c"><span class="ev ev-high">Measured</span></td></tr>
-                        <tr><th scope="row">Cropping &amp; visible overlays</th><td>Upload, repost</td><td class="c"><code>A1, A3</code></td><td>Removes boundary regions and surrounding context; changes detector input framing</td><td class="c"><span class="ev ev-mod">Described</span></td></tr>
-                        <tr><th scope="row">Metadata stripping</th><td>Upload</td><td class="c"><code>&mdash;</code></td><td>Invalidates manifest binding; recovery falls back to durable credentials</td><td class="c"><span class="ev ev-mod">Described</span></td></tr>
-                        <tr><th scope="row">Audio transcoding &amp; resampling</th><td>Upload</td><td class="c"><code>A2, A4</code></td><td>Alters vocoder and neural-codec residuals used by acoustic detectors</td><td class="c"><span class="ev ev-mod">Partial</span></td></tr>
-                        <tr><th scope="row">Repeated download &amp; reupload</th><td>Cross-platform</td><td class="c"><code>A2, A4</code></td><td>Compounds the above; no reported degradation curve over repost depth</td><td class="c"><span class="ev ev-low">Not measured</span></td></tr>
+                        <tr><th scope="row">Transcoding and re-encoding</th><td>Upload</td><td class="c"><code>A2, A4</code></td><td>Suppresses generation traces and introduces codec artifacts the detector must separate from them</td><td class="c"><span class="ev ev-high">Measured</span></td></tr>
+                        <tr><th scope="row">Resolution reduction and resizing</th><td>Upload</td><td class="c"><code>A1, A4</code></td><td>Weakens localized blending boundaries first; smallest edited regions degrade earliest</td><td class="c"><span class="ev ev-high">Measured</span></td></tr>
+                        <tr><th scope="row">Cropping and visible overlays</th><td>Upload, repost</td><td class="c"><code>A1, A3</code></td><td>Removes boundary regions and surrounding context; changes detector input framing</td><td class="c"><span class="ev ev-mod">Described</span></td></tr>
+                        <tr><th scope="row">Metadata stripping</th><td>Upload</td><td class="c"><code>n/a</code></td><td>Invalidates manifest binding; recovery falls back to durable credentials</td><td class="c"><span class="ev ev-mod">Described</span></td></tr>
+                        <tr><th scope="row">Audio transcoding and resampling</th><td>Upload</td><td class="c"><code>A2, A4</code></td><td>Alters vocoder and neural-codec residuals used by acoustic detectors</td><td class="c"><span class="ev ev-mod">Partial</span></td></tr>
+                        <tr><th scope="row">Repeated download and reupload</th><td>Cross-platform</td><td class="c"><code>A2, A4</code></td><td>Compounds the above; no reported degradation curve over repost depth</td><td class="c"><span class="ev ev-low">Not measured</span></td></tr>
                         <tr><th scope="row">Screen recording</th><td>Repost</td><td class="c"><code>A1, A2, A4</code></td><td>Full resample; removes compression history entirely</td><td class="c"><span class="ev ev-low">Not measured</span></td></tr>
-                        <tr><th scope="row">Cross-platform, cross-language reach</th><td>Distribution</td><td class="c"><code>A3, A5</code></td><td>Moves media outside the training distribution and separates it from interpretive context</td><td class="c"><span class="ev ev-mod">Described</span></td></tr>
+                        <tr><th scope="row">Cross-platform, cross-language</th><td>Distribution</td><td class="c"><code>A3, A5</code></td><td>Moves media outside the training distribution and separates it from interpretive context</td><td class="c"><span class="ev ev-mod">Described</span></td></tr>
                         <tr class="row-highlight"><th scope="row">End-to-end in-the-wild effect</th><td>All</td><td class="c"><code>A2&ndash;A5</code></td><td>Open-source video detectors lose approximately half their benchmark AUC on contemporary circulated media</td><td class="c"><span class="ev ev-high">Measured</span></td></tr>
                     </tbody>
                 </table>
@@ -459,13 +560,18 @@
             <div class="two-col two-col-even">
                 <div class="panel">
                     <h3>Provenance &amp; Content Authenticity</h3>
-                    <p>C2PA manifests bind signed metadata to an asset; in-generation watermarking (Stable Signature, Tree-Ring, Gaussian Shading) and post-hoc watermarking (VideoSeal, RivaGAN, AudioSeal, WavMark) embed recoverable signals.</p>
-                    <p>Both inherit familiar limits: an embedded watermark must survive compression and re-encoding (<strong>A4</strong>), and recovery may depend on a specific decoder or generator family (<strong>A2</strong>). Removal attacks erase marks; forgery attacks apply them to authentic media.</p>
+                    <p>C2PA manifests bind cryptographically signed metadata to an asset; in-generation watermarking (Stable Signature, Tree-Ring, Gaussian Shading) and post-hoc watermarking (VideoSeal, RivaGAN, AudioSeal, WavMark) embed recoverable signals.</p>
+                    <p>Signed provenance sits largely <em>outside</em> A1&ndash;A5 &mdash; its failure modes are stripping and signer trust. Watermarks do not: a mark must survive compression, resizing, cropping, and re-encoding (<strong>A4</strong>), and recovery may depend on a specific decoder or generator family (<strong>A2</strong>).</p>
+                    <figure class="inline-fig">
+                        <img src="images/provenance-schematic.png" alt="Schematic showing provenance sitting outside the A1-A5 forensic lifecycle, with evidence erosion between creation and detection" loading="lazy">
+                        <figcaption>Supplementary schematic from the project assets (not a numbered figure in the paper): provenance sits outside A1&ndash;A5, while A1&ndash;A5 degrade before detection.</figcaption>
+                    </figure>
                 </div>
                 <div class="panel">
                     <h3>Governance &amp; Remediation</h3>
                     <p>EU AI Act Articles 50(2) and 50(4), China's deep-synthesis provisions, South Korea's election rules, the U.S. TAKE IT DOWN Act, and measures in Australia, the UK, and Canada.</p>
-                    <p>Marking obligations bind identifiable providers. <strong>Open-weight generators fall outside them</strong> — and that is the segment most often used to produce targeted non-consensual and political content. Unaided human review is near chance.</p>
+                    <p>Marking obligations bind identifiable providers. Open-weight generators, forked checkpoints, and locally run pipelines <strong>may fall outside them</strong> and can be used to produce targeted non-consensual or political content. Reachable provenance coverage is therefore bounded by the compliant share of the generator population, not by watermark robustness.</p>
+                    <p>Human review is the terminal stage of most platform pipelines, yet unaided human accuracy is close to chance &mdash; reviewers inherit whatever uncertainty the automated stages leave unresolved.</p>
                 </div>
             </div>
         </div>
@@ -481,10 +587,11 @@
 
             <div class="table-wrap">
                 <table class="data">
-                    <caption><strong>Table 6 (selected rows):</strong> Representative benchmarks and the assumptions each one can stress-test.</caption>
+                    <caption><strong>Table 6:</strong> Representative datasets for deepfake detection and evaluation. <strong>Mod.</strong>: I = image, A = audio, V = video, AV = audio&ndash;visual. The final column identifies the assumptions each dataset can help <em>stress-test</em>: A1 = boundary availability; A2 = stable generator fingerprints; A3 = train&ndash;test similarity; A4 = survival through processing; A5 = sufficiency of low-level cues.</caption>
                     <thead>
                         <tr>
                             <th scope="col">Dataset</th>
+                            <th scope="col">Year</th>
                             <th scope="col">Size</th>
                             <th scope="col">Mod.</th>
                             <th scope="col">Task</th>
@@ -492,32 +599,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="group"><th scope="rowgroup" colspan="5">Video and visual benchmarks</th></tr>
-                        <tr><th scope="row">FaceForensics++</th><td>1,000 real / 4,000 fake</td><td>V</td><td>Detection; classification; spatial localisation</td><td class="c"><code>A1, A2, A4</code></td></tr>
-                        <tr><th scope="row">Celeb-DF v2</th><td>590 real / 5,639 fake</td><td>V</td><td>Binary detection</td><td class="c"><code>A1, A3, A5</code></td></tr>
-                        <tr><th scope="row">DFDC</th><td>23,654 real / 104,500 fake</td><td>AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A4</code></td></tr>
-                        <tr><th scope="row">WildDeepfake</th><td>3,805 real / 3,509 fake</td><td>V</td><td>Binary detection</td><td class="c"><code>A2&ndash;A4</code></td></tr>
-                        <tr><th scope="row">ForgeryNet</th><td>2.9M images / 221K videos</td><td>I/V</td><td>Detection; classification; spatial/temporal localisation</td><td class="c"><code>A1&ndash;A4</code></td></tr>
-                        <tr><th scope="row">DF40</th><td>&gt;1M fake images / &gt;0.1M fake videos</td><td>I/V</td><td>Detection; manipulation classification</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
-                        <tr><th scope="row">TalkingHeadBench</th><td>2,312 real / 2,994 fake</td><td>AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
-                        <tr><th scope="row">GenVideo</th><td>1.21M real / 1.08M fake</td><td>V</td><td>Binary detection</td><td class="c"><code>A2, A3, A4</code></td></tr>
-                        <tr><th scope="row">AIGVDBench</th><td>20K real / 422K fake</td><td>V</td><td>Detection; cross-generator generalisation</td><td class="c"><code>A2&ndash;A4</code></td></tr>
-                        <tr class="group"><th scope="rowgroup" colspan="5">Audio benchmarks</th></tr>
-                        <tr><th scope="row">ASVspoof series</th><td>Multiple challenge releases</td><td>A</td><td>Spoof detection; spoofing-robust speaker verification</td><td class="c"><code>A2&ndash;A5</code></td></tr>
-                        <tr><th scope="row">WaveFake</th><td>117,985 clips; &asymp;196 h</td><td>A</td><td>Binary detection</td><td class="c"><code>A2, A3, A5</code></td></tr>
-                        <tr><th scope="row">CodecFake</th><td>132,277 real / 925,939 fake</td><td>A</td><td>Binary detection</td><td class="c"><code>A2, A3, A5</code></td></tr>
-                        <tr class="group"><th scope="rowgroup" colspan="5">Audio-visual and multimodal benchmarks</th></tr>
-                        <tr><th scope="row">FakeAVCeleb</th><td>500 real / 19,500 fake</td><td>AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
-                        <tr><th scope="row">LAV-DF</th><td>36,431 real / 99,873 fake</td><td>AV</td><td>Detection; temporal localisation</td><td class="c"><code>A1, A2, A5</code></td></tr>
-                        <tr><th scope="row">AV-Deepfake1M / 1M++</th><td>&asymp;1.15M / &asymp;2.05M videos</td><td>AV</td><td>Detection; temporal localisation</td><td class="c"><code>A1&ndash;A5</code></td></tr>
-                        <tr><th scope="row">AVLips</th><td>Up to 340K AV samples</td><td>AV</td><td>Lip-sync detection</td><td class="c"><code>A1&ndash;A5</code></td></tr>
-                        <tr><th scope="row">MAVOS-DD</th><td>25,195 real / 35,169 fake; 252.5 h</td><td>AV</td><td>Detection; open-set generalisation</td><td class="c"><code>A2, A3, A5</code></td></tr>
-                        <tr><th scope="row">DeepSpeak</th><td>16,043 real / 14,005 fake; &gt;100 h</td><td>AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
-                        <tr><th scope="row">DigiFakeAV</th><td>10K real / 50K fake</td><td>AV</td><td>Binary detection</td><td class="c"><code>A2&ndash;A5</code></td></tr>
-                        <tr><th scope="row">AVFakeBench</th><td>1,000 real / 2,000 fake; 12K QA pairs</td><td>AV</td><td>Detection; forgery classification; explanation</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
-                        <tr class="group"><th scope="rowgroup" colspan="5">Fully synthetic and real-world multimodal benchmarks</th></tr>
-                        <tr><th scope="row">Deepfake-Eval-2024</th><td>2,036 V / 1,820 A / 1,975 I</td><td>I/A/V</td><td>Binary detection</td><td class="c"><code>A2&ndash;A5</code></td></tr>
-                        <tr><th scope="row">Omni-Fake</th><td>&gt;1M ID / &gt;200K OOD</td><td>I/A/V/AV</td><td>Detection; localisation; explanation</td><td class="c"><code>A1&ndash;A5</code></td></tr>
+                        <tr class="group"><th scope="rowgroup" colspan="6">Video and visual benchmarks</th></tr>
+                        <tr><th scope="row">FaceForensics++</th><td class="c">2019</td><td>1,000 real / 4,000 fake</td><td class="c">V</td><td>Detection; classification; spatial localisation</td><td class="c"><code>A1, A2, A4</code></td></tr>
+                        <tr><th scope="row">Celeb-DF v2</th><td class="c">2020</td><td>590 real / 5,639 fake</td><td class="c">V</td><td>Binary detection</td><td class="c"><code>A1, A3, A5</code></td></tr>
+                        <tr><th scope="row">DFDC</th><td class="c">2020</td><td>23,654 real / 104,500 fake</td><td class="c">AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A4</code></td></tr>
+                        <tr><th scope="row">WildDeepfake</th><td class="c">2020</td><td>3,805 real / 3,509 fake</td><td class="c">V</td><td>Binary detection</td><td class="c"><code>A2&ndash;A4</code></td></tr>
+                        <tr><th scope="row">ForgeryNet</th><td class="c">2021</td><td>2.9M images / 221K videos</td><td class="c">I/V</td><td>Detection; classification; spatial/temporal localisation</td><td class="c"><code>A1&ndash;A4</code></td></tr>
+                        <tr><th scope="row">DF40</th><td class="c">2024</td><td>&gt;1M fake images / &gt;0.1M fake videos</td><td class="c">I/V</td><td>Detection; manipulation classification</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
+                        <tr><th scope="row">TalkingHead Bench</th><td class="c">2026</td><td>2,312 real / 2,994 fake</td><td class="c">AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
+                        <tr><th scope="row">GenVideo</th><td class="c">2026</td><td>1.21M real / 1.08M fake</td><td class="c">V</td><td>Binary detection</td><td class="c"><code>A2, A3, A4</code></td></tr>
+                        <tr><th scope="row">AIGVDBench</th><td class="c">2026</td><td>20K real / 422K fake</td><td class="c">V</td><td>Detection; cross-generator generalisation</td><td class="c"><code>A2&ndash;A4</code></td></tr>
+                        <tr class="group"><th scope="rowgroup" colspan="6">Audio benchmarks</th></tr>
+                        <tr><th scope="row">ASVspoof series</th><td class="c">2019&ndash;2024</td><td>Multiple challenge releases</td><td class="c">A</td><td>Spoof detection; spoofing-robust speaker verification</td><td class="c"><code>A2&ndash;A5</code></td></tr>
+                        <tr><th scope="row">WaveFake</th><td class="c">2021</td><td>117,985 clips; ~196 h</td><td class="c">A</td><td>Binary detection</td><td class="c"><code>A2, A3, A5</code></td></tr>
+                        <tr><th scope="row">CodecFake</th><td class="c">2025</td><td>132,277 real / 925,939 fake</td><td class="c">A</td><td>Binary detection</td><td class="c"><code>A2, A3, A5</code></td></tr>
+                        <tr class="group"><th scope="rowgroup" colspan="6">Audio&ndash;visual and multimodal benchmarks</th></tr>
+                        <tr><th scope="row">FakeAVCeleb</th><td class="c">2021</td><td>500 real / 19,500 fake</td><td class="c">AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
+                        <tr><th scope="row">LAV-DF</th><td class="c">2022</td><td>36,431 real / 99,873 fake</td><td class="c">AV</td><td>Detection; temporal localisation</td><td class="c"><code>A1, A2, A5</code></td></tr>
+                        <tr><th scope="row">AV-Deepfake1M / 1M++</th><td class="c">2024&ndash;2025</td><td>~1.15M / ~2.05M videos</td><td class="c">AV</td><td>Detection; temporal localisation</td><td class="c"><code>A1&ndash;A5</code></td></tr>
+                        <tr><th scope="row">AVLips</th><td class="c">2024</td><td>Up to 340K AV samples</td><td class="c">AV</td><td>Lip-sync detection</td><td class="c"><code>A1&ndash;A5</code></td></tr>
+                        <tr><th scope="row">MAVOS-DD</th><td class="c">2025</td><td>25,195 real / 35,169 fake; 252.5 h</td><td class="c">AV</td><td>Detection; open-set generalisation</td><td class="c"><code>A2, A3, A5</code></td></tr>
+                        <tr><th scope="row">DeepSpeak</th><td class="c">2026</td><td>16,043 real / 14,005 fake; &gt;100 h</td><td class="c">AV</td><td>Binary detection</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
+                        <tr><th scope="row">DigiFakeAV</th><td class="c">2026</td><td>10K real / 50K fake</td><td class="c">AV</td><td>Binary detection</td><td class="c"><code>A2&ndash;A5</code></td></tr>
+                        <tr><th scope="row">AVFakeBench</th><td class="c">2026</td><td>1,000 real / 2,000 fake; 12K QA pairs</td><td class="c">AV</td><td>Detection; forgery classification; explanation</td><td class="c"><code>A1&ndash;A3, A5</code></td></tr>
+                        <tr class="group"><th scope="rowgroup" colspan="6">Fully synthetic and real-world multimodal benchmarks</th></tr>
+                        <tr><th scope="row">Deepfake-Eval-2024</th><td class="c">2025</td><td>2,036 V / 1,820 A / 1,975 I</td><td class="c">I/A/V</td><td>Binary detection</td><td class="c"><code>A2&ndash;A5</code></td></tr>
+                        <tr><th scope="row">Omni-Fake</th><td class="c">2026</td><td>&gt;1M ID / &gt;200K OOD</td><td class="c">I/A/V/AV</td><td>Detection; localisation; explanation</td><td class="c"><code>A1&ndash;A5</code></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -531,83 +638,130 @@
     <!-- Findings -->
     <section id="findings" class="section">
         <div class="container">
-            <h2 class="section-title">Key Findings</h2>
-
-            <div class="finding">
-                <h3>1. Foundation-model generation invalidates several assumptions at once</h3>
-                <p>Contemporary generators leave no compositing boundary and no stable fingerprint (<strong>A1, A2</strong>), come from architectures too varied for paradigm-specific detectors (<strong>A3</strong>), and synthesize audio and video jointly, so the two channels agree (<strong>A5</strong>). Fully synthetic and jointly generated content offers neither a boundary nor an exploitable cross-modal inconsistency.</p>
+            <h2 class="section-title">Findings</h2>
+            <div class="content">
+                <p>Applying A1&ndash;A5 uniformly across the reviewed generation methods, detectors, platform transformations, and benchmarks yields six findings.</p>
             </div>
 
             <div class="finding">
-                <h3>2. The stages that determine what evidence survives are the least studied</h3>
-                <p>Distribution, provenance, and remediation together account for <strong>12%</strong> of the corpus, against 75% for creation and detection. Table 5 shows that most platform effects are <em>asserted rather than measured</em>: no reviewed work reports time-to-detection, posts before detection, or platforms reached for deployed detection.</p>
+                <h3><span class="fkey">F1</span> Effort concentrates on A3 and avoids A4</h3>
+                <p>Of the <strong>50 detectors</strong> in Table 4, <strong>36</strong> include a mechanism for distribution shift (<code>A3</code>), whereas <strong>39</strong> depend on signals surviving processing (<code>A4</code>) and only <strong>10</strong> mitigate its failure. Six of those ten are reasoning or agentic systems whose per-sample cost rules them out of platform-scale screening. The assumption that distribution breaks most reliably has the fewest methods, and the fewest deployable ones.</p>
             </div>
 
             <div class="finding">
-                <h3>3. No single defense covers the space</h3>
-                <p>Passive detection fails under evasion; watermarking under removal and open-weight non-participation; signed provenance under credential stripping; attribution under multi-stage pipelines. Provenance coverage is bounded by the <em>compliant share of the generator population</em>, not by watermark robustness — leaving passive detection as the only evidence for exactly the segment most often used to produce targeted non-consensual and political content.</p>
+                <h3><span class="fkey">F2</span> Boundary evidence has lapsed</h3>
+                <p><strong>41 of 50</strong> detectors neither depend on <code>A1</code> nor mitigate it, and residual evidence falls from High for autoencoder and GAN face swapping to Low for diffusion, autoregressive, and flow-based full-frame generation. <code>A1</code> now carries weight only for localized editing, lip-sync, and composited body transfer.</p>
             </div>
 
             <div class="finding">
-                <h3>4. Benchmark scores do not transfer to circulated media</h3>
-                <p>Detectors reported near ceiling on curated benchmarks lose roughly <strong>half their AUC</strong> on contemporary circulated media. Benchmarks must be refreshed as generators are released, and each should state which assumptions it exercises.</p>
+                <h3><span class="fkey">F3</span> Generalization is measured through one aging shift</h3>
+                <p><strong>18 of the 50</strong> detectors report FaceForensics++ &rarr; Celeb-DF v2 as their headline cross-dataset result. Both endpoints are pre-2021 autoencoder and GAN identity swaps, so the number certifies transfer between two closely related face-swap distributions rather than open-world generalization. <code>A3</code> is at once the most mitigated assumption and the least stringently measured.</p>
+            </div>
+
+            <div class="finding">
+                <h3><span class="fkey">F4</span> Foundation-model content is largely unevaluated</h3>
+                <p><strong>34 of the 50</strong> detectors report no evaluation on diffusion or foundation-model media; <strong>14</strong> do and <strong>2</strong> partially, and those that do belong to families that appeared from 2023 onward. This is a gap in the evaluation record rather than evidence of failure, and closing it requires re-evaluation, not new architectures.</p>
+            </div>
+
+            <div class="finding">
+                <h3><span class="fkey">F5</span> Lifecycle effects are asserted, not measured</h3>
+                <p><strong>Three of the nine</strong> platform transformations in Table 5 have a quantified effect and <strong>one</strong> is partial. Repost depth and screen recording have no degradation curve, and no work reports time to detection, posts before detection, or platforms reached. The gaps track the corpus imbalance: 12% of the 239 works cover distribution, provenance, and remediation against 75% for creation and detection.</p>
+            </div>
+
+            <div class="finding">
+                <h3><span class="fkey">F6</span> Benchmarks cover what is easy to vary</h3>
+                <p>Across the <strong>22 benchmarks</strong> in Table 6, generator diversity (<code>A2</code>) is exercised by <strong>21</strong> and train&ndash;test dissimilarity (<code>A3</code>) by <strong>20</strong>, while signal survival (<code>A4</code>) is exercised by <strong>12</strong> and boundary availability (<code>A1</code>) by <strong>13</strong>; <strong>three</strong> exercise all five. Ranking therefore certifies the assumptions that adding generators can vary, while the reported halving of AUC on circulated media arises under conditions half the datasets omit.</p>
+            </div>
+
+            <div class="content callout">
+                <p><strong>Two consequences follow.</strong> Provenance does not absorb the shortfall, because marking obligations bind identifiable providers while open-weight and locally run generators &mdash; the ones most used for targeted non-consensual and political content &mdash; fall outside them; watermark robustness cannot extend coverage the generator population does not grant. What the findings imply is not better classifiers but measurement of what survives distribution, and reporting of detection performance under it.</p>
             </div>
         </div>
     </section>
 
-    <!-- Open challenges -->
+    <!-- Impact -->
     <section class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Open Challenges</h2>
+            <h2 class="section-title">What Follows From This</h2>
             <div class="grid-3">
                 <div class="card-simple">
                     <div class="number">1</div>
-                    <h3>Generalization Beyond Known Generators</h3>
-                    <p>Open-set and unknown-source handling rather than closed-set benchmarking. Generator-agnostic representations, authentic-data modelling, continual adaptation.</p>
+                    <h3>For method design</h3>
+                    <p>A1&ndash;A5 replaces &ldquo;does it generalize?&rdquo; with &ldquo;which evidence does it require?&rdquo; A method can state its dependency and be evaluated against the conditions that remove it. Two detectors that fail under the same assumption do not become more reliable when combined.</p>
                 </div>
                 <div class="card-simple">
                     <div class="number">2</div>
-                    <h3>Fingerprint Stability Across Lineages</h3>
-                    <p>Report attribution over checkpoint families and generation chains rather than over single released models.</p>
+                    <h3>For evaluation</h3>
+                    <p>Benchmarks should declare which of A1&ndash;A5 they exercise; detectors should report operating threshold, calibration, and performance after platform-representative processing alongside the headline metric.</p>
                 </div>
                 <div class="card-simple">
                     <div class="number">3</div>
-                    <h3>Foundation-Model &amp; Joint AV Forensics</h3>
-                    <p>Coordinated generation removes cross-modal inconsistency as free evidence. Which signals remain transferable?</p>
+                    <h3>For platforms &amp; governance</h3>
+                    <p>Evidence that generation never produced cannot be recovered downstream; evidence platform processing removes cannot be recovered by a better classifier. Detection, provenance, disclosure, and remediation are stages of one evidence chain.</p>
                 </div>
-                <div class="card-simple">
-                    <div class="number">4</div>
-                    <h3>Detection Across the Lifecycle</h3>
-                    <p>Couple passive detection with provenance, context, calibrated uncertainty, and human review — without letting one unreliable component dominate.</p>
-                </div>
-                <div class="card-simple">
-                    <div class="number">5</div>
-                    <h3>Living Benchmarks</h3>
-                    <p>Continuously refreshed corpora in which newly released generators appear only after detector training; calibrated scores at realistic prevalence.</p>
-                </div>
-                <div class="card-simple">
-                    <div class="number">6</div>
-                    <h3>Deployment Evaluation</h3>
-                    <p>Measure calibration, abstention, time to detection, and performance after realistic platform transformations — not a single AUC.</p>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open questions -->
+    <section id="questions" class="section">
+        <div class="container">
+            <h2 class="section-title">Open Questions</h2>
+
+            <div class="finding">
+                <h3><span class="fkey qkey">Q1</span> How far does a fingerprint transfer across a model lineage? <code>A2</code></h3>
+                <p>Attribution and frequency-domain detection assume a stable trace, yet fine-tuning, distillation, multi-stage chaining, and anti-forensic transformations each remove it &mdash; and both are evaluated almost only on base checkpoints. Attribution should be measured across checkpoint families and generation chains, and allowed to answer <em>unknown</em>.</p>
+            </div>
+
+            <div class="finding">
+                <h3><span class="fkey qkey">Q2</span> What evidence remains when nothing is composited? <code>A1</code> <code>A5</code></h3>
+                <p>Fully generated video leaves no authentic region for comparison, and jointly generated audio and video are synchronized by construction, so both cues fail together. The open task is to establish which of the remaining signals &mdash; decoder bias, temporal dynamics, physical plausibility &mdash; transfer <em>across</em> generator families rather than within one.</p>
+            </div>
+
+            <div class="finding">
+                <h3><span class="fkey qkey">Q3</span> What should open-set detection look like? <code>A3</code></h3>
+                <p>Generators are released faster than forensic datasets are rebuilt, so unseen architectures are the default deployment case rather than the exception. Generator-agnostic representations, authentic-media modelling, continual adaptation, and open-set recognition all need protocols in which the test-time generator, manipulation type, and domain are absent from training.</p>
+            </div>
+
+            <div class="finding">
+                <h3><span class="fkey qkey">Q4</span> How should weak and heterogeneous evidence be combined? <code>A4</code></h3>
+                <p>When media-level signals are degraded, a decision must draw on provenance, context, calibrated uncertainty, and human review &mdash; but combining sources also combines their assumptions, and the weakest one sets the floor. Deployment evaluation should report calibration, abstention, and time to detection rather than accuracy alone.</p>
+            </div>
+
+            <div class="finding">
+                <h3><span class="fkey qkey">Q5</span> Can evaluation keep pace with generation?</h3>
+                <p>Static benchmarks age as generators are released, and Table 6 shows that existing ones exercise different subsets of A1&ndash;A5. A refreshed framework that admits new generators only <em>after</em> detector training, drawing on circulated rather than curated media, is the direct response &mdash; and its cost is annotation rather than modelling.</p>
+            </div>
+
+            <div class="table-wrap">
+                <table class="data">
+                    <caption><strong>Why no single defense is sufficient.</strong></caption>
+                    <thead><tr><th scope="col">Defense</th><th scope="col">Fails under</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Passive detection</th><td>Evasion and learned anti-forensics</td></tr>
+                        <tr><th scope="row">Watermarking</th><td>Removal, and open-weight non-participation</td></tr>
+                        <tr><th scope="row">Signed provenance</th><td>Credential stripping</td></tr>
+                        <tr><th scope="row">Generator attribution</th><td>Multi-stage pipelines</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
     <!-- Contributions -->
-    <section class="section">
+    <section class="section bg-light">
         <div class="container">
             <h2 class="section-title">Contributions</h2>
             <div class="grid-contrib">
                 <div class="card-simple">
                     <div class="number">1</div>
                     <h3>A1&ndash;A5 Framework</h3>
-                    <p>Five forensic assumptions that explain when and why deepfake detectors fail.</p>
+                    <p>A forensic framework that explains when and why deepfake detectors fail.</p>
                 </div>
                 <div class="card-simple">
                     <div class="number">2</div>
                     <h3>Evidence-Based Taxonomy</h3>
-                    <p>Generation methods linked to the forensic traces they actually leave behind.</p>
+                    <p>A generation taxonomy linking manipulation types to the forensic traces they leave.</p>
                 </div>
                 <div class="card-simple">
                     <div class="number">3</div>
@@ -617,7 +771,7 @@
                 <div class="card-simple">
                     <div class="number">4</div>
                     <h3>Lifecycle Formalization</h3>
-                    <p>Distribution as a sequence of transformations on forensic evidence, with the 75%/12% imbalance quantified.</p>
+                    <p>The social-media lifecycle as a sequence of transformations on forensic evidence, with the 75%/12% imbalance quantified.</p>
                 </div>
                 <div class="card-simple">
                     <div class="number">5</div>
