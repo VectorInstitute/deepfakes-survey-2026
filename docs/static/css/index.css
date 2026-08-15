@@ -82,11 +82,11 @@ h1, h2, h3, h4 {
 }
 
 .vector-mark {
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
 }
 
 .vector-mark img {
-    height: 54px;
+    height: 110px;
     width: auto;
     display: inline-block;
 }
@@ -290,6 +290,10 @@ h1, h2, h3, h4 {
 
     .hero-body {
         padding: 3rem 1rem 2rem;
+    }
+
+    .vector-mark img {
+        height: 84px;
     }
 
     .link-block {
