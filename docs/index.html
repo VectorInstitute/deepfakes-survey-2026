@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A survey of generative audio-video deepfakes across creation, platform distribution, detection, provenance, and remediation, organized around five forensic assumptions.">
+  <meta name="description" content="A survey of 212 works on generative audio-video deepfakes across creation, platform distribution, detection, provenance, and remediation, organized around five forensic assumptions.">
   <meta name="theme-color" content="#1e293b">
-  <title>Deepfake Detection Beyond the Lab</title>
+  <title>Deepfakes in the Foundation-Model Era</title>
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Deepfake Detection Beyond the Lab: A Survey of Real-World Distribution, Forensics, and Provenance">
-  <meta property="og:description" content="239 works across the deepfake lifecycle, organized around five forensic assumptions that detectors implicitly rely on.">
+  <meta property="og:title" content="Deepfakes in the Foundation-Model Era: A Survey of Forensics, Distribution, and Provenance">
+  <meta property="og:description" content="212 works across the deepfake lifecycle, organized around five forensic assumptions that detectors implicitly rely on.">
   <meta property="og:url" content="https://vectorinstitute.github.io/deepfakes-survey-2026/">
   <meta property="og:image" content="https://vectorinstitute.github.io/deepfakes-survey-2026/images/figure5-lifecycle.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -36,19 +36,18 @@
               </a>
             </div>
 
-            <h1 class="title is-1 publication-title">Deepfake Detection Beyond the Lab</h1>
-            <p class="is-size-5 publication-subtitle">A Survey of Real-World Distribution, Forensics, and Provenance</p>
+            <h1 class="title is-1 publication-title">Deepfakes in the Foundation-Model Era</h1>
+            <p class="is-size-5 publication-subtitle">A Survey of Forensics, Distribution, and Provenance</p>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">Shaina Raza,</span>
-              <span class="author-block">Jesse Ho,</span>
-              <span class="author-block">Ahmed Radwan,</span>
-              <span class="author-block">Mohamed Hafez,</span>
-              <span class="author-block">Graham Taylor</span>
+              <span class="author-block">Jessee Ho,</span>
+              <span class="author-block">Ahmed Y. Radwan,</span>
+              <span class="author-block">Mohamed Hafez</span>
             </div>
 
             <div class="is-size-6 publication-authors">
-              <span class="author-block">Vector Institute</span>
+              <span class="author-block">Vector Institute for Artificial Intelligence</span>
             </div>
 
             <div class="column has-text-centered">
@@ -111,24 +110,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Deepfake detection is usually measured on curated benchmarks, yet most synthetic video reaches an
-              audience through social media platforms that compress, resize, re-encode, crop, and repost it long
-              before any detector sees it. The practical question is therefore not whether a detector separates
-              real from fake under laboratory conditions, but whether the evidence it depends on still exists at
-              the moment a decision has to be made. This survey reviews 239 works on generative audio-video
-              deepfakes across the full lifecycle of creation, platform distribution, detection, provenance, and
-              remediation. We organize the review around five forensic assumptions that detectors implicitly rely
-              on: that a manipulated region leaves a boundary, that a generator leaves a stable fingerprint, that
-              test data resemble training data, that forensic signals survive processing, and that low-level clues
-              are sufficient. Using these assumptions as a common lens, we present an evidence-based taxonomy of
-              generation methods, review signal-driven, learning-based, reasoning-based, agentic, and adversarially
-              robust detection, and examine provenance mechanisms including content credentials and watermarking
-              alongside emerging disclosure and takedown regulation. Two findings recur. First, foundation-model
-              generation invalidates several assumptions at once, since fully synthetic and jointly generated
-              audio-video content offers neither a compositing boundary nor an exploitable cross-modal
-              inconsistency. Second, the literature is concentrated on creation and detection, with distribution,
-              provenance, and remediation together accounting for 12% of the corpus. We close with evaluation
-              protocols that report which assumptions a benchmark actually exercises.
+              Deepfake detection is usually measured on curated benchmarks, yet synthetic video often reaches audiences through social-media platforms that compress, resize, re-encode, crop, and repost it before downstream detection. The practical question is therefore not whether a detector separates real from fake under laboratory conditions, but whether the evidence it depends on still exists at the moment a decision must be made. This survey reviews 212 works on generative audio-video deepfakes across the full lifecycle of creation, platform distribution, detection, provenance, and remediation. We organize the review around five forensic assumptions that detectors implicitly rely on: that a manipulated region leaves a boundary, that a generator leaves a stable fingerprint, that test data resemble training data, that forensic signals survive processing, and that low-level clues are sufficient. Using these assumptions as a common lens, we present an evidence-based taxonomy of generation methods, review signal-driven, learning-based, reasoning-based, agentic, and adversarially robust detection, and examine provenance mechanisms including content credentials and watermarking alongside emerging disclosure and takedown regulation. Two findings recur. First, foundation-model generation can weaken several assumptions at once, since fully synthetic and jointly generated audio-video content may remove compositing boundaries and reduce exploitable cross-modal inconsistencies. Second, the literature is concentrated on creation and detection, with distribution, provenance, and remediation together accounting for 13% of the corpus. We close with evaluation protocols that report which assumptions a benchmark actually exercises.
             </p>
           </div>
         </div>
@@ -188,19 +170,19 @@
 
       <div class="columns is-centered stat-row has-text-centered">
         <div class="column stat">
-          <div class="stat-value">239</div>
+          <div class="stat-value">212</div>
           <div class="stat-label">works reviewed</div>
         </div>
         <div class="column stat">
-          <div class="stat-value">216</div>
-          <div class="stat-label">references cited</div>
+          <div class="stat-value">73%</div>
+          <div class="stat-label">peer-reviewed</div>
         </div>
         <div class="column stat">
           <div class="stat-value">75%</div>
           <div class="stat-label">creation &amp; detection</div>
         </div>
         <div class="column stat">
-          <div class="stat-value">12%</div>
+          <div class="stat-value">13%</div>
           <div class="stat-label">distribution, provenance, remediation</div>
         </div>
       </div>
@@ -238,7 +220,7 @@
       <h2 class="title is-3">Paper List</h2>
       <div class="content">
         <p>
-          All 216 references, grouped by year and by the role each plays in the survey, are on GitHub.
+          All 212 references, grouped by year and by the role each plays in the survey, are on GitHub.
         </p>
       </div>
       <a href="https://github.com/VectorInstitute/deepfakes-survey-2026" target="_blank" rel="noopener"
@@ -255,11 +237,11 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
-      <pre><code>@article{raza2026deepfake,
-  title   = {Deepfake Detection Beyond the Lab: A Survey of
-             Real-World Distribution, Forensics, and Provenance},
-  author  = {Raza, Shaina and Ho, Jesse and Radwan, Ahmed and
-             Hafez, Mohamed and Taylor, Graham},
+      <pre><code>@article{raza2026deepfakes,
+  title   = {Deepfakes in the Foundation-Model Era: A Survey of
+             Forensics, Distribution, and Provenance},
+  author  = {Raza, Shaina and Ho, Jessee and Radwan, Ahmed Y. and
+             Hafez, Mohamed},
   journal = {ACM Computing Surveys},
   year    = {2026},
   note    = {Under review}
@@ -280,6 +262,7 @@
               Resources used in preparing this research were provided, in part, by the Province of Ontario,
               the Government of Canada through CIFAR, and companies sponsoring the
               <a href="http://www.vectorinstitute.ai/#partners" target="_blank" rel="noopener">Vector Institute</a>.
+              This research was funded by the EU's Horizon Europe project AIXPERT (ID 101214389).
             </p>
             <p>
               This page was built using the

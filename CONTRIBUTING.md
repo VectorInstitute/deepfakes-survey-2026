@@ -1,6 +1,6 @@
 # Contributing
 
-This is a living repository that accompanies the survey **Deepfake Detection Beyond the Lab: A Survey of Real-World Distribution, Forensics, and Provenance**. The field moves faster than any single review, so contributions are welcome.
+This is a living repository that accompanies the survey **Deepfakes in the Foundation-Model Era: A Survey of Forensics, Distribution, and Provenance**. The field moves faster than any single review, so contributions are welcome.
 
 ## Adding a paper
 
@@ -34,7 +34,7 @@ Datasets go in the [Datasets & Benchmarks](README.md#5-datasets--benchmarks) sec
 
 The README is generated from the paper's own LaTeX source, not transcribed by hand:
 
-- The **paper list** covers every one of the 216 references cited by the build, grouped using the paper's own table structure (Table 3 for generation families, Table 4 for detection families, Table 6 for benchmarks).
+- The **paper list** covers every one of the 212 references cited by the build, grouped using the paper's own table structure (Table 3 for generation families, Table 4 for detection families, Table 6 for benchmarks).
 - The **tables** on the project page reproduce Tables 1, 2, 5, and 6 cell-for-cell.
 - The **figures** in `docs/images/` are rendered from the figure sources in `figures/`, not cropped from the compiled PDF.
 

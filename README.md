@@ -1,9 +1,9 @@
-# Deepfake Detection Beyond the Lab: A Survey of Real-World Distribution, Forensics, and Provenance
+# Deepfakes in the Foundation-Model Era: A Survey of Forensics, Distribution, and Provenance
 
 [![Paper](https://img.shields.io/badge/Paper-Coming%20Soon-lightgrey)](https://github.com/VectorInstitute/deepfakes-survey-2026)
 [![Project Page](https://img.shields.io/badge/Project-Website-brightgreen)](https://vectorinstitute.github.io/deepfakes-survey-2026/)
-[![Corpus](https://img.shields.io/badge/Corpus-239%20works-blue)](#-the-evidence-gap)
-[![References](https://img.shields.io/badge/References-216-blue)](#-papers-by-category)
+[![Corpus](https://img.shields.io/badge/Corpus-212%20works-blue)](#-the-evidence-gap)
+[![References](https://img.shields.io/badge/References-212-blue)](#-papers-by-category)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
@@ -21,21 +21,21 @@ Companion repository for our survey on **real-world deepfake detection**. Deepfa
 
 The practical question is therefore not whether a detector separates real from fake under laboratory conditions, but **whether the evidence it depends on still exists at the moment a decision has to be made**.
 
-**Authors:** Shaina Raza¹, Jesse Ho¹, Ahmed Radwan¹, Mohamed Hafez¹, Graham Taylor¹
+**Authors:** Shaina Raza¹, Jessee Ho¹, Ahmed Y. Radwan¹, Mohamed Hafez¹
 
 ¹Vector Institute for Artificial Intelligence
 
 | | |
 |---|---|
-| **Corpus** | 239 works; 72% peer-reviewed; median publication year 2024 |
-| **References** | 216 cited works, all listed below |
+| **Corpus** | 212 works; 73% peer-reviewed; median publication year 2024 |
+| **References** | 212 cited works, all listed below |
 | **Search window** | January 2017 – August 2026 |
 | **Databases** | IEEE Xplore · ACM DL · SpringerLink · ScienceDirect · OpenReview · PMLR · AAAI DL · arXiv |
 | **Scope** | Audio-video deepfakes, from generation through platform distribution to remediation |
 
 ---
 
-## What does "beyond the lab" mean?
+## What the survey covers
 
 
 A deepfake is not simply a video to classify. It passes through a lifecycle of creation, upload, platform processing, recommendation, viewing, reporting, review, and eventual removal, labelling, or continued spread. Media transformations within that lifecycle — compression, re-encoding, cropping, reposting — weaken or alter the very forensic traces that detectors rely on.
@@ -80,25 +80,12 @@ Detectors rely on assumptions about the evidence available to them. The survey g
   <br/>
   <img src="docs/images/figure3c-year-role.png" alt="Stacked bar chart of publications per year by primary role" width="47%"/>
   <img src="docs/images/figure3d-arms-race.png" alt="Line chart of cumulative generation versus detection effort" width="37%"/>
-  <p><em><strong>Figure 3.</strong> Overview of the reviewed corpus. (a) Creation and detection account for three quarters of the corpus, against 12% for distribution, provenance, and remediation combined. (b) Publication sources by venue type; 72% peer-reviewed. (c) Publications per year by primary role; the 2026 bar is partial (January to August). (d) Cumulative effort: detection led through 2023, but generation led by 24 works in 2024.</em></p>
+  <p><em><strong>Figure 3.</strong> Overview of the reviewed corpus. (a) Creation and detection account for 75% of the corpus, compared with 13% for distribution, provenance, and remediation combined. (b) Publication sources by venue type; 73% of the corpus is peer-reviewed. (c) Publications per year by primary generation/detection role; the 2026 bar is partial (January–August). (d) Cumulative generation and detection coverage over time.</em></p>
 </div>
-
-**Lifecycle-stage coverage (N = 239):**
-
-| Stage | Works | Share |
-|---|---:|---:|
-| Creation | 94 | 39% |
-| Detection | 85 | 36% |
-| Foundations / other | 32 | 13% |
-| Provenance | 16 | 7% |
-| Remediation | 8 | 3% |
-| Distribution | 4 | 2% |
-| **Distribution + provenance + remediation** | **28** | **12%** |
 
 **Key trends:**
 
-- **Coverage imbalance** — Creation and detection account for **75%** of the corpus, while distribution, provenance, and remediation together account for **12%**. The stages that determine what evidence survives to a detector are among the least studied.
-- **Generation is pulling ahead** — Cumulative generation research overtook detection research by 24 works in 2024.
+- **Coverage imbalance** — Creation and detection account for **75%** of the corpus, while distribution, provenance, and remediation together account for **13%**. The stages that determine what evidence survives to a detector are among the least studied.
 - **Benchmarks do not transfer** — Deepfake-Eval-2024 collects roughly 44 hours of video from 88 web sources and reports an average **50% AUC reduction** for evaluated open-source video detectors relative to their original benchmarks.
 - **Prevalence dominates deployment** — At 0.1% synthetic-media prevalence, a detector with TPR = 0.90 and FPR = 0.01 reaches only about **8.3% precision**. Threshold-independent AUC hides this entirely.
 
@@ -121,8 +108,8 @@ Detectors rely on assumptions about the evidence available to them. The survey g
 |---|---:|---|
 | Identified through database search and supplementary sources | 1,247 | 203 duplicates removed |
 | Screened by title & abstract | 1,044 | 614 excluded as irrelevant |
-| Full-text articles assessed for eligibility | 430 | 191 excluded after full-text review |
-| **Works included in survey** | **239** | — |
+| Full-text articles assessed for eligibility | 430 | 218 excluded after full-text review |
+| **Works included in survey** | **212** | — |
 
 </details>
 
@@ -250,19 +237,19 @@ Table 5 of the survey. *Described* denotes effects reported without a quantitati
 
 Applying A1–A5 uniformly across the reviewed generation methods, detectors, platform transformations, and benchmarks yields six findings.
 
-**F1. Effort concentrates on A3 and avoids A4.** Of the 50 detectors in Table 4, **36** include a mechanism for distribution shift (`A3`), whereas **39** depend on signals surviving processing (`A4`) and only **10** mitigate its failure. Six of those ten are reasoning or agentic systems whose per-sample cost rules them out of platform-scale screening. The assumption that distribution breaks most reliably has the fewest methods, and the fewest deployable ones.
+**F1. Research emphasizes A3 more than A4.** Of the **50 detectors** coded in Table 4, **36** explicitly mitigate distribution shift (`A3`), whereas **39** depend on forensic signals surviving processing (`A4`) and only **10** mitigate its failure. Five of these ten are reasoning-based or agentic systems, whose multiple inference or tool calls may limit their suitability for platform-scale screening. Although `A4` is widely assumed by existing methods, comparatively few directly address its failure.
 
-**F2. Boundary evidence has lapsed.** **41 of 50** detectors neither depend on `A1` nor mitigate it, and residual evidence falls from High for autoencoder and GAN face swapping to Low for diffusion, autoregressive, and flow-based full-frame generation. `A1` now carries weight only for localized editing, lip-sync, and composited body transfer.
+**F2. Boundary evidence is becoming less central.** In Table 4, **41 of 50** detectors neither depend on `A1` nor explicitly mitigate its failure. Residual boundary evidence declines from High for autoencoder- and GAN-based face manipulation to Low for diffusion, autoregressive, and flow-based full-frame generation. `A1` therefore remains most relevant to localized manipulations such as compositing, lip-sync editing, and body transfer rather than fully synthetic generation.
 
-**F3. Generalization is measured through one aging shift.** **18 of the 50** detectors report FaceForensics++ → Celeb-DF v2 as their headline cross-dataset result. Both endpoints are pre-2021 autoencoder and GAN identity swaps, so the number certifies transfer between two closely related face-swap distributions rather than open-world generalization. `A3` is at once the most mitigated assumption and the least stringently measured.
+**F3. Generalization is often evaluated through a narrow cross-dataset shift.** **Eighteen of the 50** detectors report FaceForensics++ → Celeb-DF v2 as a principal cross-dataset evaluation. Both benchmarks primarily represent pre-foundation-model facial manipulation, so this protocol measures transfer between related face-manipulation distributions rather than open-world generalization to contemporary generators. `A3` is therefore the most frequently mitigated assumption, while its evaluation remains comparatively narrow.
 
-**F4. Foundation-model content is largely unevaluated.** **34 of the 50** detectors report no evaluation on diffusion or foundation-model media; **14** do and **2** partially, and those that do belong to families that appeared from 2023 onward. This is a gap in the evaluation record rather than evidence of failure, and closing it requires re-evaluation, not new architectures.
+**F4. Foundation-model content remains under-evaluated.** Of the 50 detectors, **34** report no evaluation on diffusion- or foundation-model-generated media, **two** provide partial evaluation, and **14** explicitly evaluate such content. This represents a gap in the evaluation record rather than evidence that earlier detectors necessarily fail. Existing methods should be re-evaluated on contemporary generation paradigms before performance gaps are attributed solely to architectural limitations.
 
-**F5. Lifecycle effects are asserted, not measured.** **Three of the nine** platform transformations in Table 5 have a quantified effect and **one** is partial. Repost depth and screen recording have no degradation curve, and no work reports time to detection, posts before detection, or platforms reached. The gaps track the corpus imbalance: 12% of the 239 works cover distribution, provenance, and remediation against 75% for creation and detection.
+**F5. Lifecycle effects are more often described than quantified.** Of the **nine** entries in Table 5, **three** report quantitatively measured effects and **one** has partial evidence. Repost depth and screen recording lack reported degradation curves, and no work in the reviewed corpus reports time to detection, posts observed before detection, or platforms reached. This mirrors the broader corpus imbalance: only **13%** of the reviewed works address distribution, provenance, and remediation, compared with **75%** covering creation and detection.
 
-**F6. Benchmarks cover what is easy to vary.** Across the **22** benchmarks in Table 6, generator diversity (`A2`) is exercised by **21** and train–test dissimilarity (`A3`) by **20**, while signal survival (`A4`) is exercised by **12** and boundary availability (`A1`) by **13**; **three** exercise all five. Ranking therefore certifies the assumptions that adding generators can vary, while the reported halving of AUC on circulated media arises under conditions half the datasets omit.
+**F6. Benchmarks emphasize generator and distribution diversity over signal survival.** Across the **22** benchmarks in Table 6, generator diversity (`A2`) is exercised by **21** and train–test dissimilarity (`A3`) by **20**, whereas signal survival under processing (`A4`) is exercised by **12** and boundary availability (`A1`) by **13**; only **three** exercise all five assumptions. Current benchmark coverage therefore favors generator and distribution diversity, while substantially fewer benchmarks test whether forensic evidence survives realistic processing.
 
-> **Two consequences follow.** Provenance does not absorb the shortfall, because marking obligations bind identifiable providers while open-weight and locally run generators — the ones most used for targeted non-consensual and political content — fall outside them; watermark robustness cannot extend coverage the generator population does not grant. What the findings imply is not better classifiers but measurement of what survives distribution, and reporting of detection performance under it.
+> **Two consequences follow.** First, provenance cannot fully compensate for this evaluation gap because its coverage depends on adoption by generators and platforms; open-weight, forked, or locally operated pipelines may remain outside participating provenance ecosystems regardless of watermark robustness. Second, the findings motivate greater emphasis not only on improving classifiers, but on measuring which forensic signals survive real distribution pipelines and reporting detector performance under those conditions.
 
 </details>
 
@@ -272,11 +259,9 @@ Applying A1–A5 uniformly across the reviewed generation methods, detectors, pl
 ## 📖 Papers by Category
 
 
-All **216 references cited by the survey**, organized by the role each plays in the argument. Groups follow the paper's own tables: generation groups mirror Table 3, detection families mirror Table 4, and benchmarks mirror Table 6. Blockquotes give the assumption note the survey attaches to that group.
+All **212 references cited by the survey**, organized by the role each plays in the argument. Groups follow the paper's own tables: generation groups mirror Table 3, detection families mirror Table 4, and benchmarks mirror Table 6. Entries are ordered newest-first within a subsection, and blockquotes give the assumption note the survey attaches to that group.
 
-**Click any group to expand it.** Entries inside are grouped by year, newest first.
-
-> The reviewed **corpus** is 239 works while the **bibliography** cites 216: the corpus counts items the coverage analysis in Figure 3 scores, some of which are grouped as a series (the ASVspoof releases, for instance) or discussed only in aggregate. This list follows the bibliography, and covers all 216.
+> Corpus size and reference count now agree: the survey reviews 212 works and cites 212 references.
 
 ## 1. Foundations & Forensic Context
 
@@ -328,20 +313,15 @@ Section 2 of the survey: the five-stage attack pipeline, the generative paradigm
 </details>
 
 <details>
-<summary><strong>Preprocessing and representation</strong> &nbsp;<sub>4 entries</sub></summary>
+<summary><strong>Preprocessing and representation</strong> &nbsp;<sub>2 entries</sub></summary>
 
 **2020**
 
-- [2020] **Retinaface: Single-shot multi-level face localisation in the wild** *Jiankang Deng et al.* [[paper](https://doi.org/10.1109/cvpr42600.2020.00525)]
 - [2020] **wav2vec 2.0: A framework for self-supervised learning of speech representations** *Alexei Baevski et al.* [[paper](https://arxiv.org/abs/2006.11477)]
 
 **2016**
 
 - [2016] **Joint face detection and alignment using multitask cascaded convolutional networks** *Kaipeng Zhang et al.* [[paper](https://doi.org/10.1109/lsp.2016.2603342)]
-
-**1999**
-
-- [1999] **A Morphable Model for the Synthesis of 3D Faces** *Volker Blanz et al.* [[paper](https://doi.org/10.1145/311535.311556)]
 
 </details>
 
@@ -494,14 +474,13 @@ Section 3, organized by manipulation target, because the target determines what 
 </details>
 
 <details>
-<summary><strong>Lip-sync manipulation</strong> &nbsp;<sub>4 entries</sub></summary>
+<summary><strong>Lip-sync manipulation</strong> &nbsp;<sub>3 entries</sub></summary>
 
 > `A1` holds only around the mouth, and `A4` is especially fragile because compression erases small-region traces first.
 
 **2024**
 
 - [2024] **Diff2Lip: Audio Conditioned Diffusion Models for Lip-Synchronization** *Rudrabha Mukhopadhyay et al.* [[paper](https://arxiv.org/abs/2308.09716)]
-- [2024] **Musetalk: Real-time high-fidelity video dubbing via spatio-temporal sampling** *Yue Zhang et al.* [[paper](https://arxiv.org/abs/2410.10122)]
 
 **2022**
 
@@ -938,7 +917,7 @@ Section 5: what happens to forensic evidence after content enters social media.
 </details>
 
 <details>
-<summary><strong>Provenance, Watermarking, and Content Authenticity</strong> &nbsp;<sub>14 entries</sub></summary>
+<summary><strong>Provenance, Watermarking, and Content Authenticity</strong> &nbsp;<sub>13 entries</sub></summary>
 
 > `A4`, and `A2` for keyed recovery. Signed provenance sits largely outside `A1`–`A5`; watermarks inherit the same signal degradation.
 
@@ -966,10 +945,6 @@ Section 5: what happens to forensic evidence after content enters social media.
 **2021**
 
 - [2021] **Artificial fingerprinting for generative models: Rooting deepfake attribution in training data** *Ning Yu et al.* [[paper](https://doi.org/10.1109/iccv48922.2021.01418)]
-
-**2019**
-
-- [2019] **Robust invisible video watermarking with attention** *Kevin Alex Zhang et al.* [[paper](https://arxiv.org/abs/1909.01285)]
 
 </details>
 
@@ -1188,7 +1163,7 @@ Static benchmarks age as generators are released, and Table 6 shows that existin
 | Signed provenance | Credential stripping |
 | Generator attribution | Multi-stage pipelines |
 
-Provenance coverage is bounded by the compliant share of the generator population rather than by watermark robustness, leaving passive detection as the only evidence for the segment most often used to produce targeted non-consensual and political content.
+Provenance coverage depends on adoption by generators and platforms: open-weight, forked, or locally operated pipelines may remain outside participating provenance ecosystems regardless of watermark robustness.
 
 </details>
 
@@ -1251,11 +1226,11 @@ This is a living repository that will be updated as the field evolves. See [CONT
 If you find this survey useful in your research, please cite:
 
 ```bibtex
-@article{raza2026deepfake,
-  title   = {Deepfake Detection Beyond the Lab: A Survey of
-             Real-World Distribution, Forensics, and Provenance},
-  author  = {Raza, Shaina and Ho, Jesse and Radwan, Ahmed and
-             Hafez, Mohamed and Taylor, Graham},
+@article{raza2026deepfakes,
+  title   = {Deepfakes in the Foundation-Model Era: A Survey of
+             Forensics, Distribution, and Provenance},
+  author  = {Raza, Shaina and Ho, Jessee and Radwan, Ahmed Y. and
+             Hafez, Mohamed},
   journal = {ACM Computing Surveys},
   year    = {2026},
   note    = {Under review. Project page:
@@ -1279,7 +1254,7 @@ For questions about the repository itself, please [open an issue](https://github
 ## 🙏 Acknowledgments
 
 
-Resources used in preparing this research were provided, in part, by the Province of Ontario, the Government of Canada through CIFAR, and companies sponsoring the [Vector Institute](http://www.vectorinstitute.ai/#partners).
+Resources used in preparing this research were provided, in part, by the Province of Ontario, the Government of Canada through CIFAR, and companies sponsoring the [Vector Institute](http://www.vectorinstitute.ai/#partners). This research was funded by the EU's Horizon Europe project AIXPERT (ID 101214389).
 
 ---
 

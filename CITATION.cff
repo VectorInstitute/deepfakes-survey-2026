@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this survey or repository, please cite it as below."
-title: "Deepfake Detection Beyond the Lab: A Survey of Real-World Distribution, Forensics, and Provenance"
+title: "Deepfakes in the Foundation-Model Era: A Survey of Forensics, Distribution, and Provenance"
 abstract: >-
-  A survey of 239 works on generative audio-video deepfakes across the full
+  A survey of 212 works on generative audio-video deepfakes across the full
   lifecycle of creation, platform distribution, detection, provenance, and
   remediation, organized around five forensic assumptions (A1-A5) that
   detectors implicitly rely on.
@@ -12,16 +12,13 @@ authors:
     given-names: Shaina
     affiliation: "Vector Institute for Artificial Intelligence"
   - family-names: Ho
-    given-names: Jesse
+    given-names: Jessee
     affiliation: "Vector Institute for Artificial Intelligence"
   - family-names: Radwan
-    given-names: Ahmed
+    given-names: Ahmed Y.
     affiliation: "Vector Institute for Artificial Intelligence"
   - family-names: Hafez
     given-names: Mohamed
-    affiliation: "Vector Institute for Artificial Intelligence"
-  - family-names: Taylor
-    given-names: Graham
     affiliation: "Vector Institute for Artificial Intelligence"
 repository-code: "https://github.com/VectorInstitute/deepfakes-survey-2026"
 url: "https://vectorinstitute.github.io/deepfakes-survey-2026/"
