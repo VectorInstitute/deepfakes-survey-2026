@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this survey or repository, please cite it as below."
-title: "Deepfakes in the Foundation-Model Era: A Survey of Forensics, Distribution, and Provenance"
+title: "Deepfakes in the Foundation-Model Era: A Survey of Forensics, Generation and Distribution Across Social Media Lifecycle"
 abstract: >-
   A survey of 212 works on generative audio-video deepfakes across the full
   lifecycle of creation, platform distribution, detection, provenance, and

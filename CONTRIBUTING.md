@@ -1,6 +1,6 @@
 # Contributing
 
-This is a living repository that accompanies the survey **Deepfakes in the Foundation-Model Era: A Survey of Forensics, Distribution, and Provenance**. The field moves faster than any single review, so contributions are welcome.
+This is a living repository that accompanies the survey **Deepfakes in the Foundation-Model Era: A Survey of Forensics, Generation and Distribution Across Social Media Lifecycle**. The field moves faster than any single review, so contributions are welcome.
 
 ## Adding a paper
 

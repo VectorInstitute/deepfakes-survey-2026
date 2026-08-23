@@ -1,4 +1,4 @@
-# Deepfakes in the Foundation-Model Era: A Survey of Forensics, Distribution, and Provenance
+# Deepfakes in the Foundation-Model Era: A Survey of Forensics, Generation and Distribution Across Social Media Lifecycle
 
 [![Paper](https://img.shields.io/badge/Paper-Coming%20Soon-lightgrey)](https://github.com/VectorInstitute/deepfakes-survey-2026)
 [![Project Page](https://img.shields.io/badge/Project-Website-brightgreen)](https://vectorinstitute.github.io/deepfakes-survey-2026/)
@@ -1228,7 +1228,8 @@ If you find this survey useful in your research, please cite:
 ```bibtex
 @article{raza2026deepfakes,
   title   = {Deepfakes in the Foundation-Model Era: A Survey of
-             Forensics, Distribution, and Provenance},
+             Forensics, Generation and Distribution Across
+             Social Media Lifecycle},
   author  = {Raza, Shaina and Ho, Jessee and Radwan, Ahmed Y. and
              Hafez, Mohamed},
   journal = {ACM Computing Surveys},
