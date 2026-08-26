@@ -1,6 +1,6 @@
 # Deepfakes in the Foundation-Model Era: A Survey of Forensics, Generation and Distribution Across Social Media Lifecycle
 
-[![Paper](https://img.shields.io/badge/Paper-Coming%20Soon-lightgrey)](https://github.com/VectorInstitute/deepfakes-survey-2026)
+[![Preprint](https://img.shields.io/badge/Preprint-preprints.org-b31b1b)](https://www.preprints.org/manuscript/202608.1870)
 [![Project Page](https://img.shields.io/badge/Project-Website-brightgreen)](https://vectorinstitute.github.io/deepfakes-survey-2026/)
 [![Corpus](https://img.shields.io/badge/Corpus-212%20works-blue)](#-the-evidence-gap)
 [![References](https://img.shields.io/badge/References-212-blue)](#-papers-by-category)
@@ -1227,19 +1227,19 @@ If you find this survey useful in your research, please cite:
 
 ```bibtex
 @article{raza2026deepfakes,
-  title   = {Deepfakes in the Foundation-Model Era: A Survey of
-             Forensics, Generation and Distribution Across
-             Social Media Lifecycle},
-  author  = {Raza, Shaina and Ho, Jessee and Radwan, Ahmed Y. and
-             Hafez, Mohamed},
-  journal = {ACM Computing Surveys},
-  year    = {2026},
-  note    = {Under review. Project page:
-             https://vectorinstitute.github.io/deepfakes-survey-2026/}
+  title     = {Deepfakes in the Foundation-Model Era: A Survey of
+               Forensics, Generation and Distribution Across
+               Social Media Lifecycle},
+  author    = {Raza, Shaina and Ho, Jessee and Radwan, Ahmed Y. and
+               Hafez, Mohamed},
+  year      = {2026},
+  month     = {August},
+  publisher = {Preprints},
+  url       = {https://www.preprints.org/manuscript/202608.1870}
 }
 ```
 
-> The entry will be updated with the DOI and volume details once the paper is published.
+> The preprint DOI is not yet registered; it will be added here once it resolves.
 
 ---
 
