@@ -96,10 +96,11 @@ h1, h2, h3, h4 {
     display: inline-block;
 }
 
-/* AIXPERT is a much wider lockup, so match it to Vector by area
-   rather than by height, otherwise it reads as the larger logo. */
+/* Both logo files are trimmed to their artwork. AIXPERT is the wider
+   lockup (1.66:1 vs 1.11:1), so it is set slightly shorter to give the
+   two the same visual footprint. */
 .vector-mark img[alt="AIXPERT"] {
-    height: 83px;
+    height: 92px;
 }
 
 /* ---------- Buttons ---------- */
@@ -308,7 +309,7 @@ h1, h2, h3, h4 {
     }
 
     .vector-mark img[alt="AIXPERT"] {
-        height: 63px;
+        height: 70px;
     }
 
     .link-block {
