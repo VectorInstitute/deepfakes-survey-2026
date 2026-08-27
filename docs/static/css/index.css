@@ -83,6 +83,11 @@ h1, h2, h3, h4 {
 
 .vector-mark {
     margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
 }
 
 .vector-mark img {
