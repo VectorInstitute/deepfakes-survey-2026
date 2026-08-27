@@ -96,6 +96,12 @@ h1, h2, h3, h4 {
     display: inline-block;
 }
 
+/* AIXPERT is a much wider lockup, so match it to Vector by area
+   rather than by height, otherwise it reads as the larger logo. */
+.vector-mark img[alt="AIXPERT"] {
+    height: 83px;
+}
+
 /* ---------- Buttons ---------- */
 
 .button {
@@ -299,6 +305,10 @@ h1, h2, h3, h4 {
 
     .vector-mark img {
         height: 84px;
+    }
+
+    .vector-mark img[alt="AIXPERT"] {
+        height: 63px;
     }
 
     .link-block {
